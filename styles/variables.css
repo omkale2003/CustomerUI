@@ -1,0 +1,85 @@
+:root {
+  /* Brand Color Palette */
+  --color-primary: #087E8B;         /* Deep Coastal Teal */
+  --color-primary-hover: #075E68;   /* Ocean Deep */
+  --color-ocean-deep: #075E68;      /* Footer & Deep Accents */
+  --color-tropical-green: #2E7D5B;  /* Nature & Eco Highlights */
+  --color-konkan-sun: #F2A93B;      /* Seasonal Accent & Badges */
+  --color-warm-sand: #FFF8EE;       /* Warm background highlights */
+  --color-white: #FFFFFF;
+  
+  /* Text & Neutral Colors */
+  --color-text-primary: #172B2F;    /* High contrast dark teal-slate */
+  --color-text-secondary: #66777B;  /* Balanced body/meta slate */
+  --color-text-muted: #91A3A7;      /* Subtle placeholder text */
+  --color-text-inverse: #FFFFFF;
+  
+  /* Background & Surface Colors */
+  --color-bg-body: #FAFCFC;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-sand-light: #FFFBF5;
+  --color-bg-subtle: #F0F6F6;
+  --color-bg-dark: #075E68;
+  --color-bg-darker: #054850;
+  
+  /* Border & Divider Colors */
+  --color-border-subtle: #E3ECEE;
+  --color-border-medium: #CBD9DC;
+  --color-border-focus: #087E8B;
+  
+  /* Feedback Colors */
+  --color-success: #238B5A;
+  --color-success-light: #EBF7F1;
+  --color-error: #D95C55;
+  --color-error-light: #FDEDED;
+  --color-warning: #E09520;
+  
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* 8px Spacing System */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 104px;
+  
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-search: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Elevation / Shadows */
+  --shadow-xs: 0 1px 2px rgba(23, 43, 47, 0.04);
+  --shadow-sm: 0 2px 6px rgba(23, 43, 47, 0.06);
+  --shadow-md: 0 6px 16px rgba(23, 43, 47, 0.08);
+  --shadow-lg: 0 12px 32px rgba(23, 43, 47, 0.10);
+  --shadow-xl: 0 20px 48px rgba(7, 94, 104, 0.14);
+  --shadow-search: 0 16px 40px rgba(7, 94, 104, 0.12), 0 2px 6px rgba(7, 94, 104, 0.04);
+  --shadow-card-hover: 0 14px 30px rgba(7, 94, 104, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Layout Constraints */
+  --container-max-width: 1360px;
+  --header-height: 80px;
+  --z-sticky: 100;
+  --z-popover: 200;
+  --z-modal-backdrop: 500;
+  --z-modal: 600;
+  --z-toast: 1000;
+}

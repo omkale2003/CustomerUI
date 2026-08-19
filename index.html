@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — Authentic Coastal Stays, Destinations & Local Experiences</title>
+  <meta name="description" content="Discover authentic beachfront villas, heritage wada homestays, scuba diving, and local coastal experiences across Dapoli, Ratnagiri, Ganpatipule, Tarkarli, and Alibaug." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — Authentic Coastal Stays & Experiences" />
+  <meta property="og:description" content="Plan your getaway to the Konkan coast. Handpicked verified stays, sea fort adventures, and local Malvani cuisine." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       Site Header (Sticky & Responsive)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="KonkanTrip Home">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+            <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+          </svg>
+        </div>
+        <span>Konkan<span class="logo-text-accent">Trip</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#featuredStaysSection" class="nav-link active">Stays</a>
+        <a href="#experiencesSection" class="nav-link">Experiences</a>
+        <a href="search.html" class="nav-link" title="Open Screen 02 — Destination & Stay Search">Destinations</a>
+        <a href="#seasonalSection" class="nav-link">Offers</a>
+      </nav>
+
+      <!-- Header Action Items -->
+      <div class="header-actions">
+        <!-- Currency / Region indicator -->
+        <button class="header-action-btn" title="Currency & Region" style="font-size: 0.85rem; font-weight: 600;">
+          <span>₹ INR</span>
+        </button>
+
+        <!-- Wishlist Shortcut with Badge -->
+        <button class="header-action-btn" data-action="open-wishlist" aria-label="View Saved Wishlist">
+          <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="action-count-badge wishlist-count-badge">2</span>
+          <span>Wishlist</span>
+        </button>
+
+        <!-- My Trips Shortcut -->
+        <button class="header-action-btn" data-action="open-trips" aria-label="View My Booked Trips">
+          <svg class="icon-inline" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>My Trips</span>
+        </button>
+
+        <!-- Profile / Login Pill -->
+        <button class="user-profile-pill" data-action="open-auth" aria-label="Account Menu">
+          <div class="user-avatar-circle">KT</div>
+          <span style="font-weight: 600; font-size: 0.9rem;">Sign In</span>
+        </button>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button class="hamburger-btn" data-action="toggle-mobile-menu" aria-label="Toggle navigation menu">
+          <svg class="icon-inline" style="width:24px; height:24px;" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         Hero Section & Search Container
+         ========================================================================= -->
+    <section class="hero-section" aria-label="Konkan Coastal Hero Banner">
+      <div class="hero-bg-media">
+        <img 
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=85" 
+          alt="Sunlit Konkan beach with coconut trees, gentle waves and tropical coastal atmosphere" 
+        />
+      </div>
+      <div class="hero-gradient-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge-pill">
+          <svg class="icon-inline hero-badge-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          Authentic Maharashtra & Goa Coast
+        </div>
+
+        <h1 class="hero-headline">ESCAPE TO THE KONKAN</h1>
+        <p class="hero-supporting-text">Stays, beaches & experiences worth discovering.</p>
+
+        <!-- Main Search Widget Container -->
+        <div class="search-widget-wrap">
+          <div class="search-box-card" role="search">
+            
+            <!-- Field 1: Destination -->
+            <div class="search-field-item full-span" id="destFieldItem">
+              <label class="search-field-label" for="destinationInput">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Destination
+              </label>
+              <input 
+                type="text" 
+                id="destinationInput" 
+                class="search-field-input" 
+                placeholder="Search destination, property or location" 
+                autocomplete="off"
+              />
+
+              <!-- Destination Autocomplete Popover -->
+              <div class="popover-card" id="destPopover">
+                <div class="popover-header">Popular Konkan Coastal Escapes</div>
+                <div class="autocomplete-item" data-name="Dapoli">
+                  <div class="autocomplete-icon-box">
+                    <svg class="icon-inline" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                  <div>
+                    <div class="autocomplete-title">Dapoli</div>
+                    <div class="autocomplete-subtitle">Dolphin safaris, Karde & Murud beaches</div>
+                  </div>
+                </div>
+                <div class="autocomplete-item" data-name="Tarkarli & Devbagh">
+                  <div class="autocomplete-icon-box">
+                    <svg class="icon-inline" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>
+                  </div>
+                  <div>
+                    <div class="autocomplete-title">Tarkarli & Devbagh</div>
+                    <div class="autocomplete-subtitle">Crystal waters, Coral reef scuba & Sangam</div>
+                  </div>
+                </div>
+                <div class="autocomplete-item" data-name="Ganpatipule">
+                  <div class="autocomplete-icon-box">
+                    <svg class="icon-inline" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <div>
+                    <div class="autocomplete-title">Ganpatipule</div>
+                    <div class="autocomplete-subtitle">White sand beaches & Coastal cliff roads</div>
+                  </div>
+                </div>
+                <div class="autocomplete-item" data-name="Malvan">
+                  <div class="autocomplete-icon-box">
+                    <svg class="icon-inline" viewBox="0 0 24 24"><path d="M22 20v-9H2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z"></path></svg>
+                  </div>
+                  <div>
+                    <div class="autocomplete-title">Malvan</div>
+                    <div class="autocomplete-subtitle">Sindhudurg sea fort & Malvani thali feasts</div>
+                  </div>
+                </div>
+                <div class="autocomplete-item" data-name="Alibaug">
+                  <div class="autocomplete-icon-box">
+                    <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                  <div>
+                    <div class="autocomplete-title">Alibaug</div>
+                    <div class="autocomplete-subtitle">Luxury pool villas & Kolaba island fort</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field 2: Check-in -->
+            <div class="search-field-item">
+              <label class="search-field-label" for="checkInInput">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+                Check-in
+              </label>
+              <input type="date" id="checkInInput" class="search-field-input" />
+            </div>
+
+            <!-- Field 3: Check-out -->
+            <div class="search-field-item">
+              <label class="search-field-label" for="checkOutInput">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+                Check-out
+              </label>
+              <input type="date" id="checkOutInput" class="search-field-input" />
+            </div>
+
+            <!-- Field 4: Guests & Rooms -->
+            <div class="search-field-item" id="guestsToggle" style="position: relative;">
+              <div class="search-field-label">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                Guests & Rooms
+              </div>
+              <div class="search-field-input" id="guestsSummaryText">2 Guests, 1 Room</div>
+
+              <!-- Guests Counter Popover -->
+              <div class="popover-card" id="guestsPopover" style="min-width: 280px;">
+                <div class="counter-row">
+                  <div>
+                    <div class="counter-info-title">Adults</div>
+                    <div class="counter-info-sub">Ages 13 or above</div>
+                  </div>
+                  <div class="counter-controls">
+                    <button class="counter-btn" data-counter-action="dec" data-counter-target="adults" aria-label="Decrease Adults">-</button>
+                    <span class="counter-value" id="adultsCount">2</span>
+                    <button class="counter-btn" data-counter-action="inc" data-counter-target="adults" aria-label="Increase Adults">+</button>
+                  </div>
+                </div>
+
+                <div class="counter-row">
+                  <div>
+                    <div class="counter-info-title">Children</div>
+                    <div class="counter-info-sub">Ages 0–12</div>
+                  </div>
+                  <div class="counter-controls">
+                    <button class="counter-btn" data-counter-action="dec" data-counter-target="children" aria-label="Decrease Children">-</button>
+                    <span class="counter-value" id="childrenCount">0</span>
+                    <button class="counter-btn" data-counter-action="inc" data-counter-target="children" aria-label="Increase Children">+</button>
+                  </div>
+                </div>
+
+                <div class="counter-row">
+                  <div>
+                    <div class="counter-info-title">Rooms</div>
+                    <div class="counter-info-sub">Number of stays</div>
+                  </div>
+                  <div class="counter-controls">
+                    <button class="counter-btn" data-counter-action="dec" data-counter-target="rooms" aria-label="Decrease Rooms">-</button>
+                    <span class="counter-value" id="roomsCount">1</span>
+                    <button class="counter-btn" data-counter-action="inc" data-counter-target="rooms" aria-label="Increase Rooms">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field 5: Primary Search CTA -->
+            <button class="btn search-cta-btn" id="searchStaysBtn">
+              <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Search Stays</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Quick Search Discovery Tags -->
+        <div class="hero-quick-tags">
+          <span class="quick-tag-label">Trending Now:</span>
+          <button class="quick-tag-pill" data-filter-category="villas">Beachfront Villas</button>
+          <button class="quick-tag-pill" data-filter-category="wada">Heritage Wada Stays</button>
+          <button class="quick-tag-pill" data-query="Ratnagiri">Mango Orchards</button>
+          <button class="quick-tag-pill" data-query="Tarkarli">Scuba Diving Hubs</button>
+          <button class="quick-tag-pill" data-filter-category="cliffside">Cliffside Ocean Views</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Popular Destinations Section
+         ========================================================================= -->
+    <section class="section-wrapper" id="destinationsSection" aria-labelledby="destHeading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-eyebrow">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+              Destinations
+            </div>
+            <h2 class="section-title" id="destHeading">Explore Popular Destinations</h2>
+            <p class="section-subtitle">Find your next Konkan escape.</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Destinations Grid -->
+        <div class="destinations-grid" id="destinationsGrid">
+          <!-- Populated by JavaScript UI component renderer -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Featured Stays Section ("Stay Somewhere Special")
+         ========================================================================= -->
+    <section class="section-wrapper section-subtle" id="featuredStaysSection" aria-labelledby="staysHeading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-eyebrow green">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Curated Stays
+            </div>
+            <h2 class="section-title" id="staysHeading">Stay Somewhere Special</h2>
+            <p class="section-subtitle">Discover stays selected for your Konkan journey.</p>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="filter-tabs-bar" role="tablist">
+          <button class="filter-tab-pill active" data-category="all" role="tab">All Stays</button>
+          <button class="filter-tab-pill" data-category="villas" role="tab">Beachfront Villas</button>
+          <button class="filter-tab-pill" data-category="wada" role="tab">Heritage Wada Stays</button>
+          <button class="filter-tab-pill" data-category="eco" role="tab">Eco-Cottages & Chalets</button>
+          <button class="filter-tab-pill" data-category="cliffside" role="tab">Cliffside Resorts</button>
+        </div>
+
+        <!-- Dynamic Stays Grid -->
+        <div class="stays-grid" id="staysGrid">
+          <!-- Populated by JavaScript UI component renderer -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Explore Konkan (Category Discovery Section)
+         ========================================================================= -->
+    <section class="section-wrapper" id="exploreSection" aria-labelledby="exploreHeading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-eyebrow gold">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              Discover By Theme
+            </div>
+            <h2 class="section-title" id="exploreHeading">Explore Konkan</h2>
+            <p class="section-subtitle">From hidden coves and sea forts to authentic Malvani culinary traditions.</p>
+          </div>
+        </div>
+
+        <!-- Category Discovery Grid -->
+        <div class="category-discovery-grid" id="categoriesGrid">
+          <!-- Populated by JavaScript UI component renderer -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Experience Konkan Section
+         ========================================================================= -->
+    <section class="section-wrapper section-sand" id="experiencesSection" aria-labelledby="expHeading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-eyebrow">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Local Activities
+            </div>
+            <h2 class="section-title" id="expHeading">Experience Konkan</h2>
+            <p class="section-subtitle">Immerse in coastal traditions, underwater adventures, and historic sea fort trails.</p>
+          </div>
+        </div>
+
+        <!-- Experiences Grid -->
+        <div class="experiences-grid" id="experiencesGrid">
+          <!-- Populated by JavaScript UI component renderer -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Seasonal Offers Section ("MONSOON KONKAN ESCAPE")
+         ========================================================================= -->
+    <section class="section-wrapper" id="seasonalSection">
+      <div class="container">
+        <div class="seasonal-banner-wrap">
+          <div class="seasonal-banner-bg-pattern"></div>
+          <div class="seasonal-banner-content">
+            <div class="seasonal-badge">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle></svg>
+              Seasonal Special
+            </div>
+            <h2 class="seasonal-title">MONSOON KONKAN ESCAPE</h2>
+            <p class="seasonal-desc">
+              Discover selected stays this monsoon. Experience lush emerald cliffs, misty coconut plantations, fresh Malvani seafood banquets, and serene coastal tranquility.
+            </p>
+
+            <div class="seasonal-perks-list">
+              <div class="seasonal-perk-item">
+                <svg class="icon-inline" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Up to 25% Off Monsoon Tariff</span>
+              </div>
+              <div class="seasonal-perk-item">
+                <svg class="icon-inline" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Free Authentic Konkani Breakfast</span>
+              </div>
+              <div class="seasonal-perk-item">
+                <svg class="icon-inline" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>100% Flexible Weather Cancellation</span>
+              </div>
+            </div>
+
+            <button class="btn btn-gold btn-lg" onclick="window.konkanApp.setCategoryFilter('villas')">
+              <span>Explore Offers</span>
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Why KonkanTrip (Trust Section)
+         ========================================================================= -->
+    <section class="section-wrapper" aria-labelledby="whyHeading">
+      <div class="container">
+        <div class="section-header" style="text-align: center; justify-content: center; margin-bottom: var(--space-3xl);">
+          <div class="section-title-wrap" style="max-width: 680px;">
+            <div class="section-eyebrow green" style="justify-content: center;">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Our Promise
+            </div>
+            <h2 class="section-title" id="whyHeading">Why KonkanTrip</h2>
+            <p class="section-subtitle">Dedicated exclusively to authentic coastal travel along the Maharashtra coastline.</p>
+          </div>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <svg class="icon-inline icon-lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+            </div>
+            <h3 class="trust-title">100% Verified Stays</h3>
+            <p class="trust-desc">Every homestay, heritage wada, and coastal villa is personally inspected for cleanliness, safety, and authentic hosts.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <svg class="icon-inline icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <h3 class="trust-title">Local Experiences</h3>
+            <p class="trust-desc">Curated activities guided by native Konkani boaters, certified divers, and local historians with deep regional knowledge.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <svg class="icon-inline icon-lg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            </div>
+            <h3 class="trust-title">Easy Booking</h3>
+            <p class="trust-desc">Upfront transparent pricing with zero surprise resort fees, instant WhatsApp/SMS vouchers, and simple cancellations.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <svg class="icon-inline icon-lg" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            </div>
+            <h3 class="trust-title">Trusted Support</h3>
+            <p class="trust-desc">On-ground assistance in Marathi, Hindi & English before and during your journey to ensure a memorable coastal trip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       Ocean Deep Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <!-- Brand Summary Column -->
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <div class="logo-symbol" style="width:34px; height:34px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+              </svg>
+            </div>
+            <span>KonkanTrip</span>
+          </div>
+          <p class="footer-brand-text">
+            India's dedicated coastal travel platform connecting travelers with verified beachfront stays, heritage wadas, and authentic local experiences across the Konkan belt.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Explore Links -->
+        <div>
+          <h4 class="footer-col-title">Destinations</h4>
+          <ul class="footer-links-list">
+            <li><a href="#destinationsSection" class="footer-link">Dapoli & Murud</a></li>
+            <li><a href="#destinationsSection" class="footer-link">Tarkarli & Devbagh</a></li>
+            <li><a href="#destinationsSection" class="footer-link">Ganpatipule Beach</a></li>
+            <li><a href="#destinationsSection" class="footer-link">Malvan & Sindhudurg</a></li>
+            <li><a href="#destinationsSection" class="footer-link">Alibaug & Kihim</a></li>
+            <li><a href="#destinationsSection" class="footer-link">Guhagar & Velas</a></li>
+          </ul>
+        </div>
+
+        <!-- Stays & Categories -->
+        <div>
+          <h4 class="footer-col-title">Stay Types</h4>
+          <ul class="footer-links-list">
+            <li><a href="#featuredStaysSection" class="footer-link">Beachfront Villas</a></li>
+            <li><a href="#featuredStaysSection" class="footer-link">Heritage Wada Homestays</a></li>
+            <li><a href="#featuredStaysSection" class="footer-link">Alphonso Farm Stays</a></li>
+            <li><a href="#featuredStaysSection" class="footer-link">Cliffside Ocean Resorts</a></li>
+            <li><a href="#featuredStaysSection" class="footer-link">Eco Bamboo Cottages</a></li>
+          </ul>
+        </div>
+
+        <!-- Company & Support -->
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" class="footer-link">About KonkanTrip</a></li>
+            <li><a href="#" class="footer-link">Host with Us</a></li>
+            <li><a href="#" class="footer-link">Konkan Travel Stories</a></li>
+            <li><a href="#" class="footer-link">Help & Support</a></li>
+            <li><a href="#" class="footer-link">Safety Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Concierge -->
+        <div>
+          <h4 class="footer-col-title">Konkan Gazette</h4>
+          <p class="footer-brand-text" style="margin-bottom: 12px;">Get secret beach guides and seasonal homestay perks directly in your inbox.</p>
+          <form class="newsletter-box" onsubmit="event.preventDefault(); window.konkanApp.showToast('Subscribed to Konkan Gazette!'); this.reset();">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required />
+              <button type="submit" class="btn btn-gold btn-sm" style="padding: 10px 16px;">Join</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>© 2026 KonkanTrip Hospitality Pvt. Ltd. All rights reserved. Made for the love of the Konkan coast.</div>
+        <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Cancellation Policy</a>
+          <a href="#" class="footer-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Mobile Bottom Navigation Bar
+       ========================================================================= -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <button class="bottom-nav-item active" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      <svg class="icon-inline" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span>Home</span>
+    </button>
+    <a href="search.html" class="bottom-nav-item">
+      <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <span>Search</span>
+    </a>
+    <button class="bottom-nav-item" data-action="open-wishlist">
+      <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      <span class="action-count-badge wishlist-count-badge">2</span>
+      <span>Wishlist</span>
+    </button>
+    <button class="bottom-nav-item" data-action="open-trips">
+      <svg class="icon-inline" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+      <span>My Trips</span>
+    </button>
+    <button class="bottom-nav-item" data-action="open-auth">
+      <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       Mobile Slide-over Menu Drawer
+       ========================================================================= -->
+  <div class="mobile-menu-drawer" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <div class="brand-logo" style="font-size: 1.25rem;">
+        <div class="logo-symbol" style="width: 32px; height: 32px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>
+        </div>
+        <span>KonkanTrip</span>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close menu">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-nav-list">
+      <a href="search.html" class="mobile-nav-link" onclick="window.konkanApp.closeAllModals()">
+        <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search Screen 02</span>
+      </a>
+      <a href="#featuredStaysSection" class="mobile-nav-link active" onclick="window.konkanApp.closeAllModals()">
+        <svg class="icon-inline" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span>Stays & Homestays</span>
+      </a>
+      <a href="#experiencesSection" class="mobile-nav-link" onclick="window.konkanApp.closeAllModals()">
+        <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Local Experiences</span>
+      </a>
+      <a href="search.html" class="mobile-nav-link" onclick="window.konkanApp.closeAllModals()">
+        <svg class="icon-inline" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+        <span>Destinations</span>
+      </a>
+      <a href="#seasonalSection" class="mobile-nav-link" onclick="window.konkanApp.closeAllModals()">
+        <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle></svg>
+        <span>Monsoon Offers</span>
+      </a>
+    </div>
+
+    <div style="margin-top: auto; padding-top: var(--space-lg); border-top: 1px solid var(--color-border-subtle);">
+      <button class="btn btn-primary" style="width: 100%;" data-action="open-auth">
+        Sign In to KonkanTrip
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Modals & Drawers
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- Property Quick View Modal -->
+  <div class="modal-container" id="propertyModal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <h3 class="modal-title">Property Details & Reservation</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="propertyModalBody">
+      <!-- Injected dynamically by app.js -->
+    </div>
+  </div>
+
+  <!-- Wishlist Drawer -->
+  <div class="drawer-container" id="wishlistDrawer" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg class="icon-inline" style="color: var(--color-error);" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <h3 class="modal-title">Your Saved Stays</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close wishlist">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="wishlistDrawerBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- My Trips Drawer -->
+  <div class="drawer-container" id="tripsDrawer" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg class="icon-inline" style="color: var(--color-primary);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+        <h3 class="modal-title">My Booked Trips</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close trips">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="tripsDrawerBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- Auth / Login Modal -->
+  <div class="modal-container" id="authModal" role="dialog" aria-modal="true" style="max-width: 440px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Welcome to KonkanTrip</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close login">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 0.925rem; color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+        Sign in to unlock member-only monsoon discounts and manage your coastal bookings.
+      </p>
+      <form onsubmit="window.konkanApp.handleLoginSubmit(event)" style="display: flex; flex-direction: column; gap: var(--space-md);">
+        <div>
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-secondary); display: block; margin-bottom: 6px;">Mobile Number</label>
+          <div style="display: flex; gap: 8px;">
+            <div style="padding: 10px 12px; background: var(--color-bg-subtle); border-radius: var(--radius-md); font-weight: 600; font-size: 0.95rem; border: 1px solid var(--color-border-subtle);">+91</div>
+            <input type="tel" placeholder="Enter 10-digit mobile number" value="9820194820" required style="width: 100%; padding: 10px 14px;" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          Continue with OTP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (Demonstrates Loading, Empty, Error, Success)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="SUCCESS" title="Normal loaded state">Success</button>
+    <button class="dev-state-btn" data-mode="LOADING" title="Skeleton loader state">Loading Skeletons</button>
+    <button class="dev-state-btn" data-mode="EMPTY" title="Empty search results state">Empty State</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="Error state with retry Try Again button">Error State</button>
+  </aside>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

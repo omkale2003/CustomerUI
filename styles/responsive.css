@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Responsive Design & Breakpoints
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Bar */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-subtle);
+  z-index: var(--z-sticky);
+  box-shadow: 0 -4px 16px rgba(7, 94, 104, 0.08);
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+
+.bottom-nav-item.active, .bottom-nav-item:hover {
+  color: var(--color-primary);
+}
+
+.bottom-nav-item .action-count-badge {
+  top: 0px;
+  right: 8px;
+}
+
+/* Mobile Slide-Over Menu */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 82%;
+  max-width: 320px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-modal);
+  transform: translateX(-100%);
+  transition: transform var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  gap: var(--space-lg);
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-primary);
+}
+
+/* Large Screens (1440px reference & above) */
+@media (min-width: 1440px) {
+  .hero-section {
+    min-height: 620px;
+  }
+}
+
+/* Laptops & Tablets Landscape (<= 1180px) */
+@media (max-width: 1180px) {
+  .category-discovery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .search-box-card {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr auto;
+  }
+}
+
+/* Tablets (<= 992px) */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .search-box-card {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+    border-radius: var(--radius-lg);
+  }
+  
+  .search-field-item:not(:last-child)::after {
+    display: none;
+  }
+  
+  .search-field-item {
+    background-color: #F6FAFA;
+    border: 1px solid var(--color-border-subtle);
+  }
+  
+  .search-field-item.full-span {
+    grid-column: 1 / -1;
+  }
+  
+  .search-cta-btn {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    width: 100%;
+    padding: 14px;
+    margin-top: 4px;
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 68px; /* space for mobile bottom nav */
+  }
+  
+  .mobile-bottom-nav {
+    display: flex;
+  }
+  
+  .header-actions .header-action-btn:not(.user-profile-pill) {
+    display: none; /* wishlist/trips moved to bottom bar */
+  }
+  
+  .hero-section {
+    min-height: auto;
+    padding: var(--space-2xl) 0 var(--space-3xl);
+  }
+  
+  .hero-headline {
+    font-size: 2.15rem;
+  }
+  
+  .hero-supporting-text {
+    font-size: 1rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .search-box-card {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Horizontally scrollable destination cards on mobile */
+  .destinations-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-md);
+    padding-bottom: var(--space-sm);
+    margin-left: calc(-1 * var(--space-lg));
+    margin-right: calc(-1 * var(--space-lg));
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+    scrollbar-width: none;
+  }
+  
+  .destinations-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .destination-card {
+    flex: 0 0 260px;
+    height: 320px;
+    scroll-snap-align: start;
+  }
+  
+  .stays-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-discovery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .experiences-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .seasonal-banner-wrap {
+    padding: var(--space-xl) var(--space-lg);
+  }
+  
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+  
+  .modal-container {
+    width: 95%;
+    padding: 0;
+  }
+  
+  .drawer-container {
+    max-width: 100%;
+  }
+  
+  .dev-state-bar {
+    bottom: 74px;
+    width: 92%;
+    justify-content: space-around;
+    padding: 6px 12px;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+  
+  .hero-headline {
+    font-size: 1.85rem;
+  }
+  
+  .category-discovery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+  
+  .category-card {
+    height: 170px;
+  }
+  
+  .category-title {
+    font-size: 0.95rem;
+  }
+}

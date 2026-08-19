@@ -1,0 +1,356 @@
+/* ==========================================================================
+   KonkanTrip — Screen 08: Customer Secure Payment & Checkout Styles
+   Design System: Warm Sand, Deep Coastal Teal, Ocean Deep, Tropical Green
+   ========================================================================== */
+
+/* Page Background Canvas */
+.payment-page-body {
+  background-color: var(--color-warm-sand);
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(242, 169, 59, 0.05) 0%, transparent 35%),
+    radial-gradient(circle at 90% 16%, rgba(8, 126, 139, 0.05) 0%, transparent 40%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Two-Column Payment Stage Layout (Methods 65% | Summary 35%)
+   ========================================================================== */
+
+.payment-stage-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px var(--space-4xl);
+  width: 100%;
+}
+
+.payment-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ==========================================================================
+   Selectable Payment Method Cards
+   ========================================================================== */
+
+.payment-methods-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.payment-method-card {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: 0 4px 16px rgba(7, 94, 104, 0.04);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.payment-method-card:hover {
+  border-color: rgba(8, 126, 139, 0.35);
+}
+
+.payment-method-card.selected {
+  border-color: var(--color-primary);
+  background-color: #FAFEFE;
+  box-shadow: 0 8px 24px rgba(8, 126, 139, 0.12);
+}
+
+.method-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.method-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.method-radio-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.payment-method-card.selected .method-radio-indicator {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.method-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  display: none;
+}
+
+.payment-method-card.selected .method-radio-dot {
+  display: block;
+}
+
+.method-name-text {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.method-sub-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.method-icons-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.method-icon-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--color-bg-subtle);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   Expanded Payment Method Form Panels
+   ========================================================================== */
+
+.method-expandable-body {
+  display: none;
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--color-border-subtle);
+  animation: dropdownFadeIn 0.25s ease;
+}
+
+.payment-method-card.selected .method-expandable-body {
+  display: block;
+}
+
+/* UPI Quick App Chips */
+.upi-apps-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.upi-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.upi-app-btn:hover, .upi-app-btn.active {
+  border-color: var(--color-primary);
+  background-color: #F4FAFA;
+  color: var(--color-primary);
+}
+
+/* Card Inputs & Formatting */
+.card-brand-badge {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: #E8F3F5;
+  color: var(--color-primary);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Popular Banks Grid (Net Banking) */
+.popular-banks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.bank-choice-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bank-choice-card:hover, .bank-choice-card.active {
+  border-color: var(--color-primary);
+  background-color: #F4FAFA;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Security & Cancellation Notices
+   ========================================================================== */
+
+.security-trust-card {
+  background-color: #F4FAFA;
+  border: 1px solid rgba(8, 126, 139, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-lg);
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   Right Sticky Summary & Exact Amount CTA
+   ========================================================================== */
+
+.payment-summary-sidebar {
+  position: sticky;
+  top: 80px;
+}
+
+.payment-cta-button {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(8, 126, 139, 0.3);
+  transition: all var(--transition-fast);
+  margin-top: var(--space-lg);
+}
+
+.payment-cta-button:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(7, 94, 104, 0.35);
+}
+
+.payment-cta-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   Full-Screen Animated Payment Processing Overlay
+   ========================================================================== */
+
+.payment-processing-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 43, 49, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: calc(var(--z-modal) + 10);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color-white);
+  text-align: center;
+  padding: 24px;
+}
+
+.payment-processing-overlay.open {
+  display: flex;
+}
+
+.processing-spinner {
+  width: 54px;
+  height: 54px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--color-konkan-sun);
+  border-radius: var(--radius-full);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Mobile Responsive Styles (<= 992px & <= 640px)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .payment-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-summary-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .popular-banks-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .upi-apps-row {
+    flex-direction: column;
+  }
+
+  /* Sticky Bottom Mobile Bar */
+  .mobile-payment-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border-subtle);
+    padding: 12px 16px;
+    z-index: var(--z-sticky);
+    box-shadow: 0 -6px 20px rgba(7, 94, 104, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,641 @@
+/* ==========================================================================
+   KonkanTrip — Screen 10: Customer My Booking / Booking Details Stylesheet
+   Design System: Warm Sand, Deep Coastal Teal, Ocean Deep, Tropical Green
+   ========================================================================== */
+
+/* Page Background Canvas */
+.booking-details-page-body {
+  background-color: var(--color-warm-sand);
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(242, 169, 59, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 18%, rgba(8, 126, 139, 0.05) 0%, transparent 45%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Subtle Breadcrumbs Navigation
+   ========================================================================== */
+
+.breadcrumb-nav-bar {
+  padding: var(--space-md) 0 var(--space-xs);
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-link {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumb-separator {
+  color: var(--color-border-subtle);
+  font-size: 0.8rem;
+}
+
+.breadcrumb-current {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Booking Header Block
+   ========================================================================== */
+
+.booking-header-block {
+  margin: var(--space-md) 0 var(--space-xl);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.booking-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.booking-meta-subtitle {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ref-copy-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+}
+
+.ref-copy-pill:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* Dynamic Booking Status Badges */
+.status-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.status-badge-pill.confirmed {
+  background-color: #EAF6F0;
+  color: var(--color-tropical-green);
+  border: 1px solid rgba(46, 125, 91, 0.25);
+}
+
+.status-badge-pill.upcoming {
+  background-color: #E8F3F5;
+  color: var(--color-primary);
+  border: 1px solid rgba(8, 126, 139, 0.25);
+}
+
+.status-badge-pill.cancelled {
+  background-color: #FDF2F2;
+  color: var(--color-error);
+  border: 1px solid rgba(217, 92, 85, 0.25);
+}
+
+.status-badge-pill.refund-processing {
+  background-color: #FFF9F0;
+  color: #B57418;
+  border: 1px solid rgba(242, 169, 59, 0.3);
+}
+
+.status-badge-pill.completed {
+  background-color: #F4FAFA;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.status-badge-pill.payment-pending {
+  background-color: #FFF9F0;
+  color: #B57418;
+  border: 1px solid rgba(242, 169, 59, 0.3);
+}
+
+/* ==========================================================================
+   Main Stage Two-Column Grid (Content 65% | Sticky Sidebar 35%)
+   ========================================================================== */
+
+.booking-details-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px var(--space-4xl);
+  width: 100%;
+}
+
+.booking-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ==========================================================================
+   Section Cards
+   ========================================================================== */
+
+.booking-section-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 4px 16px rgba(7, 94, 104, 0.04);
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+.section-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.section-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 1. Property Card */
+.property-details-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.property-details-thumb {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.property-details-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.property-details-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+/* 2. Stay Details (3-Column Grid) */
+.stay-summary-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  background-color: #F8FCFC;
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.stay-col-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stay-col-header {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stay-col-value {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.stay-col-subtext {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+/* 3. Room Details */
+.room-details-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.room-details-thumb {
+  width: 100px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.room-details-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+/* 4. Guest Details Grid */
+.guest-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.guest-field-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guest-field-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.guest-field-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* 5. Cancellation Policy & Cancellation Action */
+.cancellation-card-highlight {
+  background-color: #F8FCFC;
+  border: 1.5px solid rgba(8, 126, 139, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: var(--space-md);
+}
+
+.cancel-booking-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-error);
+  color: var(--color-error);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cancel-booking-btn:hover {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+/* 6. Vertical Booking Timeline */
+.details-status-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 28px;
+  margin: var(--space-md) 0;
+}
+
+.details-status-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 2px;
+  background-color: var(--color-primary);
+}
+
+.timeline-row-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline-dot-icon {
+  position: absolute;
+  left: -28px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 3px var(--color-white);
+}
+
+.timeline-dot-icon.cancelled {
+  background-color: var(--color-error);
+}
+
+.timeline-dot-icon.refund {
+  background-color: var(--color-konkan-sun);
+}
+
+.timeline-dot-icon.upcoming {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border-subtle);
+}
+
+/* 7. Property & KonkanTrip Support Contacts */
+.contact-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.contact-sub-card {
+  background-color: #FAFDFD;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+
+/* ==========================================================================
+   Right Sticky Summary & Actions Sidebar
+   ========================================================================== */
+
+.booking-actions-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.sidebar-summary-card {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 8px 30px rgba(7, 94, 104, 0.08);
+}
+
+.sidebar-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.sidebar-total-highlight {
+  margin: var(--space-md) 0;
+  padding: 12px 14px;
+  background-color: #F8FCFC;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.sidebar-cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--space-lg);
+}
+
+.sidebar-primary-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(8, 126, 139, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.sidebar-primary-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.sidebar-secondary-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-secondary-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Cancellation Confirmation Modal
+   ========================================================================== */
+
+.cancellation-refund-box {
+  background: #F8FCFC;
+  border: 1.5px solid rgba(8, 126, 139, 0.2);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin: var(--space-md) 0;
+}
+
+.refund-math-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.refund-math-row.total-refund {
+  border-top: 1.5px solid var(--color-border-subtle);
+  margin-top: 4px;
+  padding-top: 6px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Mobile Responsive Styles (<= 992px & <= 640px)
+   ========================================================================== */
+
+.mobile-booking-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-subtle);
+  padding: 12px 16px;
+  z-index: var(--z-sticky);
+  box-shadow: 0 -6px 20px rgba(7, 94, 104, 0.1);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media (max-width: 992px) {
+  .booking-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-actions-sidebar {
+    position: static;
+  }
+
+  .stay-summary-3col {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mobile-booking-action-bar {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .property-details-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .property-details-thumb {
+    width: 100%;
+    height: 180px;
+  }
+
+  .room-details-row {
+    flex-direction: column;
+  }
+
+  .room-details-thumb {
+    width: 100%;
+    height: 140px;
+  }
+
+  .guest-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Print Stylesheet (@media print)
+   ========================================================================== */
+
+@media print {
+  .site-header, .site-footer, .dev-state-bar, .breadcrumb-nav-bar, .sidebar-cta-stack, .mobile-booking-action-bar, #toastContainer, .modal-backdrop, .modal-container, .cancel-booking-btn {
+    display: none !important;
+  }
+
+  .booking-details-page-body {
+    background: #fff !important;
+  }
+
+  .booking-details-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .booking-details-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .booking-section-card, .sidebar-summary-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}

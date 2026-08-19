@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — Search Destinations, Stays & Places Across Konkan</title>
+  <meta name="description" content="Search destinations, properties, beachfront villas, heritage wadas and coastal locations across Dapoli, Ratnagiri, Tarkarli, Malvan, Ganpatipule and Alibaug." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — Discover Coastal Destinations & Stays" />
+  <meta property="og:description" content="Find where to go across the Konkan coast before choosing your dates and guests." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/search.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body class="search-page-body">
+
+  <!-- =========================================================================
+       Mobile Top Header (Displayed on mobile screens <= 640px)
+       ========================================================================= -->
+  <header class="mobile-search-header" id="mobileSearchHeader">
+    <a href="index.html" class="mobile-back-btn" aria-label="Back to KonkanTrip Home">
+      <svg class="icon-inline" style="width:20px; height:20px;" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </a>
+    <h1 class="mobile-search-title">Where are you going?</h1>
+    <button class="mobile-back-btn" data-action="open-wishlist" aria-label="View Saved Wishlist">
+      <svg class="icon-inline" style="width:18px; height:18px;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+    </button>
+  </header>
+
+  <!-- =========================================================================
+       Standard Desktop Site Header (Sticky)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+            <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+          </svg>
+        </div>
+        <span>Konkan<span class="logo-text-accent">Trip</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links — "Stays" Highlighted as Active -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html#featuredStaysSection" class="nav-link active">Stays</a>
+        <a href="index.html#experiencesSection" class="nav-link">Experiences</a>
+        <a href="index.html#destinationsSection" class="nav-link">Destinations</a>
+        <a href="index.html#seasonalSection" class="nav-link">Offers</a>
+      </nav>
+
+      <!-- Header Action Items -->
+      <div class="header-actions">
+        <button class="header-action-btn" title="Currency & Region" style="font-size: 0.85rem; font-weight: 600;">
+          <span>₹ INR</span>
+        </button>
+
+        <!-- Wishlist Shortcut with Badge -->
+        <button class="header-action-btn" data-action="open-wishlist" aria-label="View Saved Wishlist">
+          <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="action-count-badge wishlist-count-badge">2</span>
+          <span>Wishlist</span>
+        </button>
+
+        <!-- My Trips Shortcut -->
+        <button class="header-action-btn" data-action="open-trips" aria-label="View My Booked Trips">
+          <svg class="icon-inline" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>My Trips</span>
+        </button>
+
+        <!-- Profile / Sign In Pill -->
+        <button class="user-profile-pill" data-action="open-auth" aria-label="Account Menu">
+          <div class="user-avatar-circle">KT</div>
+          <span style="font-weight: 600; font-size: 0.9rem;">Sign In</span>
+        </button>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button class="hamburger-btn" data-action="toggle-mobile-menu" aria-label="Toggle navigation menu">
+          <svg class="icon-inline" style="width:24px; height:24px;" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Screen 02 Search Stage
+       ========================================================================= -->
+  <main class="search-stage-section">
+    <div class="container">
+      <div class="search-stage-wrap">
+        
+        <!-- Desktop Back Navigation Row -->
+        <div class="back-nav-row">
+          <a href="index.html" class="back-pill-link" aria-label="Return to KonkanTrip Home">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            <span>Back to Home</span>
+          </a>
+          <div class="screen-indicator-badge">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>Screen 02 · Destination & Stay Search</span>
+          </div>
+        </div>
+
+        <!-- Main Heading Block -->
+        <div class="search-heading-block">
+          <h1 class="search-main-title">Where do you want to go?</h1>
+          <p class="search-supporting-text">Search destinations, stays or places across Konkan.</p>
+        </div>
+
+        <!-- Primary Search Input (White Surface, 18px Radius, Subtle Shadow) -->
+        <div class="primary-search-box" id="primarySearchBox" role="search">
+          <div class="search-input-inner">
+            <div class="search-icon-accent">
+              <svg class="icon-inline" style="width:22px; height:22px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            
+            <input 
+              type="text" 
+              id="searchMainInput" 
+              class="search-main-input" 
+              placeholder="Search destination, property or location" 
+              autocomplete="off"
+              aria-label="Search destination, property or location across Konkan"
+              aria-autocomplete="list"
+              aria-controls="suggestionsListContainer"
+            />
+
+            <div class="search-input-actions">
+              <div class="search-loading-spinner" id="searchSpinner" aria-label="Loading suggestions"></div>
+              <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search query" title="Clear">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Search Suggestions Popover -->
+          <div class="search-suggestions-panel" id="searchSuggestionsPanel" role="region" aria-label="Search Suggestions">
+            <div class="suggestions-header-bar" id="suggestionsHeader">Matching Places & Stays</div>
+            <div class="suggestions-list-container" id="suggestionsListContainer" role="listbox">
+              <!-- Dynamically rendered suggestions -->
+            </div>
+          </div>
+        </div>
+
+        <!-- State Feedback Container (Empty No-Results & API Error States) -->
+        <div id="stateFeedbackArea"></div>
+
+        <!-- =====================================================================
+             Recent Searches Section (Rendered dynamically if history exists)
+             ===================================================================== -->
+        <section class="recent-searches-section" id="recentSearchesSection" aria-label="Recent Searches">
+          <div class="recent-searches-header">
+            <h2 class="recent-searches-title">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Recent searches</span>
+            </h2>
+            <button class="clear-recent-btn" id="clearRecentBtn">Clear all</button>
+          </div>
+          <div class="recent-chips-grid" id="recentChipsGrid">
+            <!-- Dynamically populated chips with remove buttons -->
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             Popular in Konkan (Image-driven Destination Cards)
+             ===================================================================== -->
+        <section class="popular-section" id="popularSection" aria-labelledby="popularHeading">
+          <div class="section-head-row">
+            <div>
+              <div class="section-title-eyebrow">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>Curated Escapes</span>
+              </div>
+              <h2 class="section-main-heading" id="popularHeading">Popular in Konkan</h2>
+            </div>
+          </div>
+
+          <div class="popular-destinations-grid" id="popularDestinationsGrid">
+            <!-- Dynamically loaded from /customer/destinations/popular -->
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             Optional Regional Discovery ("Explore Konkan by region")
+             ===================================================================== -->
+        <section class="regional-discovery-section" id="regionalSection" aria-labelledby="regionalHeading">
+          <div class="section-head-row">
+            <div>
+              <div class="section-title-eyebrow" style="color: var(--color-primary);">
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                <span>Regional Guide</span>
+              </div>
+              <h2 class="section-main-heading" id="regionalHeading">Explore Konkan by region</h2>
+            </div>
+          </div>
+
+          <div class="regional-cards-grid" id="regionalCardsGrid">
+            <!-- North, Central, South Konkan cards -->
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Ocean Deep Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <!-- Brand Summary Column -->
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <div class="logo-symbol" style="width:34px; height:34px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+              </svg>
+            </div>
+            <span>KonkanTrip</span>
+          </div>
+          <p class="footer-brand-text">
+            India's dedicated coastal travel platform connecting travelers with verified beachfront stays, heritage wadas, and authentic local experiences across the Konkan belt.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Explore Links -->
+        <div>
+          <h4 class="footer-col-title">Destinations</h4>
+          <ul class="footer-links-list">
+            <li><a href="search.html?dest=Dapoli" class="footer-link">Dapoli & Murud</a></li>
+            <li><a href="search.html?dest=Tarkarli" class="footer-link">Tarkarli & Devbagh</a></li>
+            <li><a href="search.html?dest=Ganpatipule" class="footer-link">Ganpatipule Beach</a></li>
+            <li><a href="search.html?dest=Malvan" class="footer-link">Malvan & Sindhudurg</a></li>
+            <li><a href="search.html?dest=Alibaug" class="footer-link">Alibaug & Kihim</a></li>
+            <li><a href="search.html?dest=Ratnagiri" class="footer-link">Ratnagiri & Guhagar</a></li>
+          </ul>
+        </div>
+
+        <!-- Stays & Categories -->
+        <div>
+          <h4 class="footer-col-title">Stay Types</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#featuredStaysSection" class="footer-link">Beachfront Villas</a></li>
+            <li><a href="index.html#featuredStaysSection" class="footer-link">Heritage Wada Homestays</a></li>
+            <li><a href="index.html#featuredStaysSection" class="footer-link">Alphonso Farm Stays</a></li>
+            <li><a href="index.html#featuredStaysSection" class="footer-link">Cliffside Ocean Resorts</a></li>
+            <li><a href="index.html#featuredStaysSection" class="footer-link">Eco Bamboo Cottages</a></li>
+          </ul>
+        </div>
+
+        <!-- Company & Support -->
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" class="footer-link">About KonkanTrip</a></li>
+            <li><a href="#" class="footer-link">Host with Us</a></li>
+            <li><a href="#" class="footer-link">Konkan Travel Stories</a></li>
+            <li><a href="#" class="footer-link">Help & Support</a></li>
+            <li><a href="#" class="footer-link">Safety Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Concierge -->
+        <div>
+          <h4 class="footer-col-title">Konkan Gazette</h4>
+          <p class="footer-brand-text" style="margin-bottom: 12px;">Get secret beach guides and seasonal homestay perks directly in your inbox.</p>
+          <form class="newsletter-box" onsubmit="event.preventDefault(); window.konkanSearch.showToast('Subscribed to Konkan Gazette!'); this.reset();">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required />
+              <button type="submit" class="btn btn-gold btn-sm" style="padding: 10px 16px;">Join</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>© 2026 KonkanTrip Hospitality Pvt. Ltd. All rights reserved. Made for the love of the Konkan coast.</div>
+        <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Cancellation Policy</a>
+          <a href="#" class="footer-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Mobile Bottom Navigation Bar
+       ========================================================================= -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="index.html" class="bottom-nav-item">
+      <svg class="icon-inline" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span>Home</span>
+    </a>
+    <button class="bottom-nav-item active" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <span>Search</span>
+    </button>
+    <button class="bottom-nav-item" data-action="open-wishlist">
+      <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      <span class="action-count-badge wishlist-count-badge">2</span>
+      <span>Wishlist</span>
+    </button>
+    <button class="bottom-nav-item" data-action="open-trips">
+      <svg class="icon-inline" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+      <span>My Trips</span>
+    </button>
+    <button class="bottom-nav-item" data-action="open-auth">
+      <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       Mobile Slide-over Menu Drawer
+       ========================================================================= -->
+  <div class="mobile-menu-drawer" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <div class="brand-logo" style="font-size: 1.25rem;">
+        <div class="logo-symbol" style="width: 32px; height: 32px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>
+        </div>
+        <span>KonkanTrip</span>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close menu">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">
+        <svg class="icon-inline" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span>KonkanTrip Home</span>
+      </a>
+      <a href="index.html#featuredStaysSection" class="mobile-nav-link active">
+        <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>Stays & Homestays</span>
+      </a>
+      <a href="index.html#experiencesSection" class="mobile-nav-link">
+        <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Local Experiences</span>
+      </a>
+      <a href="index.html#destinationsSection" class="mobile-nav-link">
+        <svg class="icon-inline" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+        <span>Destinations</span>
+      </a>
+    </div>
+
+    <div style="margin-top: auto; padding-top: var(--space-lg); border-top: 1px solid var(--color-border-subtle);">
+      <button class="btn btn-primary" style="width: 100%;" data-action="open-auth">
+        Sign In to KonkanTrip
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Screen 03 Transition Modal (Date & Guest Selection Preview)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <div class="screen03-preview-modal" id="screen03Modal" role="dialog" aria-modal="true">
+    <div class="screen03-header">
+      <div class="screen03-title-box">
+        <div class="screen03-step-pill">Next · Screen 03</div>
+        <div class="screen03-dest-name" id="screen03DestName">Dapoli</div>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close Date & Guest Picker">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="screen03-body">
+      <!-- Dates Selection -->
+      <div class="dates-picker-grid">
+        <div class="date-field-box">
+          <label class="date-field-label" for="screen03CheckIn">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+            Check-in Date
+          </label>
+          <div class="date-field-input-box">
+            <input type="date" id="screen03CheckIn" class="date-field-input" />
+          </div>
+        </div>
+
+        <div class="date-field-box">
+          <label class="date-field-label" for="screen03CheckOut">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+            Check-out Date
+          </label>
+          <div class="date-field-input-box">
+            <input type="date" id="screen03CheckOut" class="date-field-input" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Guests & Rooms Counters -->
+      <div class="guests-selection-container">
+        <div class="counter-row">
+          <div>
+            <div class="counter-info-title">Adults</div>
+            <div class="counter-info-sub">Ages 13 or above</div>
+          </div>
+          <div class="counter-controls">
+            <button class="counter-btn" data-screen03-action="dec" data-screen03-target="adults" aria-label="Decrease Adults">-</button>
+            <span class="counter-value" id="screen03Adults">2</span>
+            <button class="counter-btn" data-screen03-action="inc" data-screen03-target="adults" aria-label="Increase Adults">+</button>
+          </div>
+        </div>
+
+        <div class="counter-row">
+          <div>
+            <div class="counter-info-title">Children</div>
+            <div class="counter-info-sub">Ages 0–12</div>
+          </div>
+          <div class="counter-controls">
+            <button class="counter-btn" data-screen03-action="dec" data-screen03-target="children" aria-label="Decrease Children">-</button>
+            <span class="counter-value" id="screen03Children">0</span>
+            <button class="counter-btn" data-screen03-action="inc" data-screen03-target="children" aria-label="Increase Children">+</button>
+          </div>
+        </div>
+
+        <div class="counter-row">
+          <div>
+            <div class="counter-info-title">Rooms</div>
+            <div class="counter-info-sub">Number of stays</div>
+          </div>
+          <div class="counter-controls">
+            <button class="counter-btn" data-screen03-action="dec" data-screen03-target="rooms" aria-label="Decrease Rooms">-</button>
+            <span class="counter-value" id="screen03Rooms">1</span>
+            <button class="counter-btn" data-screen03-action="inc" data-screen03-target="rooms" aria-label="Increase Rooms">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen03-footer">
+      <button class="btn btn-secondary" style="flex:1;" data-action="close-modal">Back</button>
+      <button class="btn btn-primary" style="flex:2;" id="screen03SubmitBtn">
+        <span>Search Stays</span>
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Property Quick View Modal
+       ========================================================================= -->
+  <div class="modal-container" id="propertyModal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <h3 class="modal-title">Property Details & Reservation</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="propertyModalBody">
+      <!-- Dynamically injected -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Wishlist Drawer
+       ========================================================================= -->
+  <div class="drawer-container" id="wishlistDrawer" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg class="icon-inline" style="color: var(--color-error);" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <h3 class="modal-title">Your Saved Stays</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close wishlist">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="wishlistDrawerBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       My Trips Drawer
+       ========================================================================= -->
+  <div class="drawer-container" id="tripsDrawer" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg class="icon-inline" style="color: var(--color-primary);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+        <h3 class="modal-title">My Booked Trips</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close trips">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="tripsDrawerBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Auth / Login Modal
+       ========================================================================= -->
+  <div class="modal-container" id="authModal" role="dialog" aria-modal="true" style="max-width: 440px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Welcome to KonkanTrip</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close login">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 0.925rem; color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+        Sign in to unlock member-only monsoon discounts and manage your coastal bookings.
+      </p>
+      <form onsubmit="event.preventDefault(); window.konkanSearch.showToast('Welcome back! Signed in.'); window.konkanSearch.closeAllModals();" style="display: flex; flex-direction: column; gap: var(--space-md);">
+        <div>
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-secondary); display: block; margin-bottom: 6px;">Mobile Number</label>
+          <div style="display: flex; gap: 8px;">
+            <div style="padding: 10px 12px; background: var(--color-bg-subtle); border-radius: var(--radius-md); font-weight: 600; font-size: 0.95rem; border: 1px solid var(--color-border-subtle);">+91</div>
+            <input type="tel" placeholder="Enter 10-digit mobile number" value="9820194820" required style="width: 100%; padding: 10px 14px;" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          Continue with OTP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (Demonstrates Loading, Empty, Error, Success)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="SUCCESS" title="Normal loaded state">Success</button>
+    <button class="dev-state-btn" data-mode="LOADING" title="Skeleton loader state">Loading Skeletons</button>
+    <button class="dev-state-btn" data-mode="EMPTY" title="Empty search results state">Empty State</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="Error state with retry Try Again button">Error State</button>
+  </aside>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

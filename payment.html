@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — Complete Your Booking & Secure Payment</title>
+  <meta name="description" content="Select your preferred payment method to finalize your verified Konkan coastal booking with 256-bit SSL encryption." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — Secure Payment Checkout" />
+  <meta property="og:description" content="Pay securely via UPI, Credit/Debit Card, or Net Banking for your verified coastal stay." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/booking.css" />
+  <link rel="stylesheet" href="styles/payment.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body class="payment-page-body">
+
+  <!-- =========================================================================
+       Focused Checkout Header (Distraction-Free)
+       ========================================================================= -->
+  <header class="checkout-header" id="checkoutHeader">
+    <div class="checkout-header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+            <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+          </svg>
+        </div>
+        <span>Konkan<span class="logo-text-accent">Trip</span></span>
+      </a>
+
+      <!-- Security Trust Badge -->
+      <div class="secure-badge-pill">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <span>🔒 Secure payment · 256-Bit SSL</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       6-Step Checkout Progress Bar
+       ========================================================================= -->
+  <section class="checkout-progress-section">
+    <div class="progress-steps-track">
+      
+      <!-- Step 1: Search (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>1. Search</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 2: Room (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>2. Room</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 3: Guest details (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>3. Guest details</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 4: Review (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>4. Review</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 5: Payment (Active) -->
+      <div class="step-item active">
+        <div class="step-bubble">5</div>
+        <span>5. Payment</span>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <!-- Step 6: Confirmation -->
+      <div class="step-item">
+        <div class="step-bubble">6</div>
+        <span>6. Confirmation</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Main Payment Stage (Two Columns: Methods 65% | Sticky Summary 35%)
+       ========================================================================= -->
+  <main class="payment-stage-container">
+    
+    <!-- Heading Block -->
+    <div style="margin-bottom: var(--space-xl);">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+        <span class="badge badge-green">Payment Step</span>
+        <span class="badge badge-sand">Screen 08 · Checkout</span>
+      </div>
+      <h1 style="font-family:var(--font-heading); font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight:800; color:var(--color-text-primary); letter-spacing:-0.02em; margin-bottom:4px;">
+        Complete your booking
+      </h1>
+      <p style="font-size:1rem; color:var(--color-text-secondary);">
+        Choose a payment method to confirm your stay.
+      </p>
+    </div>
+
+    <div class="payment-two-columns">
+
+      <!-- =====================================================================
+           LEFT COLUMN: Payment Methods Stack
+           ===================================================================== -->
+      <div class="payment-methods-column">
+        
+        <div class="payment-methods-stack">
+
+          <!-- 1. UPI Payment Method (Selected by Default) -->
+          <div class="payment-method-card selected" data-method="upi">
+            <div class="method-card-header">
+              <div class="method-title-group">
+                <div class="method-radio-indicator">
+                  <div class="method-radio-dot"></div>
+                </div>
+                <div>
+                  <div class="method-name-text">UPI (Instant & Zero Surcharge)</div>
+                  <div class="method-sub-badge">Google Pay, PhonePe, Paytm, BHIM</div>
+                </div>
+              </div>
+              <div class="method-icons-strip">
+                <span class="method-icon-pill">GPay</span>
+                <span class="method-icon-pill">PhonePe</span>
+                <span class="method-icon-pill">Paytm</span>
+              </div>
+            </div>
+
+            <!-- UPI Expandable Body -->
+            <div class="method-expandable-body">
+              <div class="upi-apps-row">
+                <button type="button" class="upi-app-btn active" data-upi-handle="@okhdfcbank">Google Pay</button>
+                <button type="button" class="upi-app-btn" data-upi-handle="@ybl">PhonePe</button>
+                <button type="button" class="upi-app-btn" data-upi-handle="@paytm">Paytm</button>
+              </div>
+
+              <div class="input-field-group">
+                <label class="field-label-persistent" for="customUpiId">Enter UPI ID</label>
+                <input type="text" id="customUpiId" class="input-styled" placeholder="username@bankhandle" value="aniket@okhdfcbank" />
+                <span style="font-size:0.75rem; color:var(--color-text-secondary);">A payment request will be sent to your UPI app</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Credit / Debit Card -->
+          <div class="payment-method-card" data-method="card">
+            <div class="method-card-header">
+              <div class="method-title-group">
+                <div class="method-radio-indicator">
+                  <div class="method-radio-dot"></div>
+                </div>
+                <div>
+                  <div class="method-name-text">Credit or Debit Card</div>
+                  <div class="method-sub-badge">Visa, MasterCard, RuPay, Amex</div>
+                </div>
+              </div>
+              <div class="method-icons-strip">
+                <span class="method-icon-pill">Visa</span>
+                <span class="method-icon-pill">Mastercard</span>
+                <span class="method-icon-pill">RuPay</span>
+              </div>
+            </div>
+
+            <!-- Card Expandable Body -->
+            <div class="method-expandable-body">
+              <div class="input-field-group" style="position:relative;">
+                <label class="field-label-persistent" for="cardNumberInput">Card Number</label>
+                <input type="text" id="cardNumberInput" class="input-styled" placeholder="1234 5678 9012 3456" maxlength="19" />
+                <span class="card-brand-badge" id="cardBrandBadge">Card</span>
+              </div>
+
+              <div class="input-grid-2">
+                <div class="input-field-group">
+                  <label class="field-label-persistent" for="cardExpiryInput">Expiry Date</label>
+                  <input type="text" id="cardExpiryInput" class="input-styled" placeholder="MM/YY" maxlength="5" />
+                </div>
+                <div class="input-field-group">
+                  <label class="field-label-persistent" for="cardCvvInput">CVV</label>
+                  <input type="password" id="cardCvvInput" class="input-styled" placeholder="3 digits" maxlength="4" />
+                </div>
+              </div>
+
+              <div class="input-field-group">
+                <label class="field-label-persistent" for="cardHolderInput">Name on Card</label>
+                <input type="text" id="cardHolderInput" class="input-styled" placeholder="e.g. Aniket Kulkarni" value="Aniket Kulkarni" />
+              </div>
+
+              <div style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:4px;">
+                🔒 Card details are tokenized securely in compliance with RBI guidelines.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Net Banking -->
+          <div class="payment-method-card" data-method="netbanking">
+            <div class="method-card-header">
+              <div class="method-title-group">
+                <div class="method-radio-indicator">
+                  <div class="method-radio-dot"></div>
+                </div>
+                <div>
+                  <div class="method-name-text">Net Banking</div>
+                  <div class="method-sub-badge">All Indian Banks Supported</div>
+                </div>
+              </div>
+              <span class="badge badge-sand" style="font-size:0.75rem;">50+ Banks</span>
+            </div>
+
+            <!-- Net Banking Expandable Body -->
+            <div class="method-expandable-body">
+              <div class="popular-banks-grid">
+                <div class="bank-choice-card active">🏛 HDFC Bank</div>
+                <div class="bank-choice-card">🏛 ICICI Bank</div>
+                <div class="bank-choice-card">🏛 State Bank of India</div>
+                <div class="bank-choice-card">🏛 Axis Bank</div>
+                <div class="bank-choice-card">🏛 Kotak Mahindra</div>
+                <div class="bank-choice-card">🏛 Bank of Maharashtra</div>
+              </div>
+
+              <select class="input-styled" style="cursor:pointer;">
+                <option value="">Select another bank...</option>
+                <option value="BOI">Bank of India</option>
+                <option value="PNB">Punjab National Bank</option>
+                <option value="CANARA">Canara Bank</option>
+                <option value="UNION">Union Bank of India</option>
+                <option value="INDUSIND">IndusInd Bank</option>
+                <option value="YES">Yes Bank</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 4. Wallets / Pay Later -->
+          <div class="payment-method-card" data-method="wallets">
+            <div class="method-card-header">
+              <div class="method-title-group">
+                <div class="method-radio-indicator">
+                  <div class="method-radio-dot"></div>
+                </div>
+                <div>
+                  <div class="method-name-text">Wallets & Pay Later</div>
+                  <div class="method-sub-badge">Amazon Pay, Mobikwik, LazyPay</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="method-expandable-body">
+              <p style="font-size:0.88rem; color:var(--color-text-secondary); margin-bottom:10px;">
+                Link your digital wallet for 1-click checkout:
+              </p>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <button type="button" class="btn btn-outline btn-sm">Amazon Pay</button>
+                <button type="button" class="btn btn-outline btn-sm">Mobikwik</button>
+                <button type="button" class="btn btn-outline btn-sm">LazyPay</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Pay at Property (Conditional) -->
+          <div class="payment-method-card" data-method="pay_property">
+            <div class="method-card-header">
+              <div class="method-title-group">
+                <div class="method-radio-indicator">
+                  <div class="method-radio-dot"></div>
+                </div>
+                <div>
+                  <div class="method-name-text">Pay at Property</div>
+                  <div class="method-sub-badge">No advance payment required today</div>
+                </div>
+              </div>
+              <span class="badge badge-green" style="font-size:0.75rem;">Flexible</span>
+            </div>
+
+            <div class="method-expandable-body">
+              <div style="background:#F4FAFA; padding:12px 14px; border-radius:var(--radius-md); border-left:4px solid var(--color-primary); font-size:0.88rem; color:var(--color-text-primary);">
+                <strong>No payment required now.</strong> Your reservation will be confirmed and you can pay the full amount of <strong>₹14,515</strong> directly at the property during check-in via Cash or UPI.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Security Trust Card -->
+        <div class="security-trust-card">
+          <svg class="icon-inline" style="color:var(--color-primary); width:28px; height:28px;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <div>
+            <strong style="color:var(--color-text-primary); display:block; margin-bottom:2px;">🔒 256-Bit Bank Grade Encryption</strong>
+            <span>Your payment is processed securely through KonkanTrip's RBI-compliant payment gateway.</span>
+          </div>
+        </div>
+
+        <!-- Cancellation Notice -->
+        <div style="background:#F2F9F5; border:1px solid rgba(46,125,91,0.2); border-radius:var(--radius-lg); padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+          <div style="color:var(--color-tropical-green); font-weight:700; font-size:0.88rem; display:flex; align-items:center; gap:6px;">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Free cancellation until 22 Aug 2026</span>
+          </div>
+          <a href="#" id="viewCancellationModalBtn" style="font-size:0.84rem; color:var(--color-primary); font-weight:700; text-decoration:underline;">View cancellation policy</a>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           RIGHT COLUMN: Sticky Booking Summary & Exact Amount CTA
+           ===================================================================== -->
+      <aside class="payment-summary-sidebar" aria-label="Payment Summary Sidebar">
+        <div class="summary-sidebar-card">
+          
+          <h3 style="font-family:var(--font-heading); font-size:1.15rem; font-weight:700; margin-bottom:var(--space-md); padding-bottom:8px; border-bottom:1px solid var(--color-border-subtle);">
+            Booking Summary
+          </h3>
+
+          <!-- Mini Property Preview -->
+          <div class="property-mini-preview">
+            <img class="mini-preview-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Cliffside Ocean Song" />
+            <div class="mini-preview-details">
+              <h4 style="font-size:0.98rem; font-weight:700;">Cliffside Ocean Song Eco Resort</h4>
+              <div style="font-size:0.8rem; color:var(--color-text-secondary);">📍 Karde Cliff Road, Dapoli</div>
+              <div style="font-size:0.82rem; font-weight:700; color:var(--color-primary); margin-top:2px;">Panoramic Ocean Suite</div>
+            </div>
+          </div>
+
+          <div class="mini-stay-meta-row">
+            <span>Dates</span>
+            <strong>24 Aug – 26 Aug (2 nights)</strong>
+          </div>
+
+          <div class="mini-stay-meta-row" style="border-bottom:1px solid var(--color-border-subtle); padding-bottom:8px; margin-bottom:8px;">
+            <span>Guests</span>
+            <strong>2 Guests · 1 Room</strong>
+          </div>
+
+          <!-- Price Table -->
+          <table class="price-breakdown-table">
+            <tr>
+              <td>Room price (2 nights)</td>
+              <td>₹14,400</td>
+            </tr>
+            <tr>
+              <td style="color:var(--color-tropical-green);">Monsoon Special (-10%)</td>
+              <td style="color:var(--color-tropical-green);">- ₹1,440</td>
+            </tr>
+            <tr>
+              <td>GST taxes & fees</td>
+              <td>+ ₹1,555</td>
+            </tr>
+            <tr class="price-total-row">
+              <td>Total Payable</td>
+              <td id="paymentSummaryTotal">₹14,515</td>
+            </tr>
+          </table>
+
+          <!-- Exact Amount CTA (Duplicate Click Protected) -->
+          <button class="payment-cta-button" id="payCtaBtn">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span id="payCtaAmountText">Pay ₹14,515</span>
+          </button>
+
+          <div style="text-align:center; font-size:0.76rem; color:var(--color-text-secondary); margin-top:10px;">
+            🔒 Single-click idempotency protection active
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Mobile Sticky Bottom Bar (<= 992px)
+       ========================================================================= -->
+  <div class="mobile-payment-bottom-bar">
+    <div>
+      <span style="font-size:0.72rem; color:var(--color-text-secondary); display:block;">Total payable</span>
+      <span style="font-size:1.15rem; font-weight:800; color:var(--color-primary);">₹14,515</span>
+    </div>
+    <button class="btn btn-primary" id="mobilePayBtn" style="padding: 10px 18px;">
+      <span id="mobilePayAmountText">Pay ₹14,515</span>
+      <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       Full-Screen Animated Payment Processing Overlay
+       ========================================================================= -->
+  <div class="payment-processing-overlay" id="paymentProcessingOverlay">
+    <div class="processing-spinner"></div>
+    <h2 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:800; margin-bottom:8px;">Processing your payment</h2>
+    <p style="font-size:0.95rem; opacity:0.85; max-width:400px; line-height:1.5;">
+      Please don't refresh or close the page while we confirm the transaction with your bank.
+    </p>
+  </div>
+
+  <!-- =========================================================================
+       Exception Modals
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- 1. Payment Failed Modal -->
+  <div class="modal-container" id="paymentFailedModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-error);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        <h3 class="modal-title">Payment Unsuccessful</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.92rem; color:var(--color-text-secondary); margin-bottom:16px;">
+        Your payment could not be completed by your bank. No booking has been confirmed, and no money has been deducted.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button class="btn btn-primary" id="retryPaymentBtn" style="width:100%;">
+          <span>Try Payment Again</span>
+        </button>
+        <button class="btn btn-outline" id="chooseOtherMethodBtn" style="width:100%;">
+          <span>Choose Another Method</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Payment Pending Modal -->
+  <div class="modal-container" id="paymentPendingModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-konkan-sun);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <h3 class="modal-title">Payment Processing</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.92rem; color:var(--color-text-secondary); margin-bottom:16px;">
+        We're waiting for confirmation from your payment provider. Your booking has not yet been confirmed. Please check your banking app to approve the transaction.
+      </p>
+      <button class="btn btn-primary" data-action="close-modal" style="width:100%;">
+        <span>Check Status Again</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. Booking Confirming Modal -->
+  <div class="modal-container" id="bookingConfirmingModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-tropical-green);" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <h3 class="modal-title">Payment Received</h3>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.92rem; color:var(--color-text-secondary); margin-bottom:12px;">
+        Payment received successfully! We're confirming your reservation with the coastal host.
+      </p>
+      <div style="background:#F4FAFA; padding:12px; border-radius:8px; font-size:0.88rem; margin-bottom:16px;">
+        Booking Reference: <strong id="confirmingBookingRef">KT-BK-980123</strong>
+      </div>
+      <a href="confirmation.html" class="btn btn-primary" style="width:100%;">
+        <span>View Confirmation Voucher</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 4. Cancellation Policy Modal -->
+  <div class="modal-container" id="cancellationModal" role="dialog" aria-modal="true" style="max-width: 540px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Cancellation & Refund Policy</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="cancellationModalBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (Demonstrates Normal, Failed, Pending, Confirming, Error)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="NORMAL" title="Normal payment flow">Normal Flow</button>
+    <button class="dev-state-btn" data-mode="PAYMENT_FAILED" title="Simulate payment failure">Simulate Failed</button>
+    <button class="dev-state-btn" data-mode="PAYMENT_PENDING" title="Simulate payment pending">Simulate Pending</button>
+    <button class="dev-state-btn" data-mode="PAYMENT_SUCCESS_CONFIRMING" title="Simulate payment success confirming">Confirming State</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="Simulate gateway offline">Gateway Offline</button>
+  </aside>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/payment.js"></script>
+</body>
+</html>

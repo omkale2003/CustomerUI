@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — Review Your Booking & Final Confirmation</title>
+  <meta name="description" content="Please verify your stay dates, selected room category, guest contact information, and transparent itemized pricing before continuing to payment." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — Review Your Coastal Stay Booking" />
+  <meta property="og:description" content="Verify your verified Konkan coastal booking details before proceeding to payment." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/booking.css" />
+  <link rel="stylesheet" href="styles/review.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body class="review-page-body">
+
+  <!-- =========================================================================
+       Focused Checkout Header (Distraction-Free)
+       ========================================================================= -->
+  <header class="checkout-header" id="checkoutHeader">
+    <div class="checkout-header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+            <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+          </svg>
+        </div>
+        <span>Konkan<span class="logo-text-accent">Trip</span></span>
+      </a>
+
+      <!-- Security Trust Badge -->
+      <div class="secure-badge-pill">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <span>🔒 Secure booking · 256-Bit SSL</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       6-Step Checkout Progress Bar
+       ========================================================================= -->
+  <section class="checkout-progress-section">
+    <div class="progress-steps-track">
+      
+      <!-- Step 1: Search (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>1. Search</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 2: Room (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>2. Room</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 3: Guest details (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>3. Guest details</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 4: Review (Active) -->
+      <div class="step-item active">
+        <div class="step-bubble">4</div>
+        <span>4. Review</span>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <!-- Step 5: Payment -->
+      <div class="step-item">
+        <div class="step-bubble">5</div>
+        <span>5. Payment</span>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <!-- Step 6: Confirmation -->
+      <div class="step-item">
+        <div class="step-bubble">6</div>
+        <span>6. Confirmation</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Main Review Stage (Two Columns: Verified Cards 65% | Sticky Summary 35%)
+       ========================================================================= -->
+  <main class="review-stage-container">
+    
+    <!-- Heading Block -->
+    <div style="margin-bottom: var(--space-xl);">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+        <span class="badge badge-green">Final Review Step</span>
+        <span class="badge badge-sand">Screen 07 · Confirmation</span>
+      </div>
+      <h1 style="font-family:var(--font-heading); font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight:800; color:var(--color-text-primary); letter-spacing:-0.02em; margin-bottom:4px;">
+        Review your booking
+      </h1>
+      <p style="font-size:1rem; color:var(--color-text-secondary);">
+        Please check your stay details before continuing to payment.
+      </p>
+    </div>
+
+    <div class="review-two-columns">
+
+      <!-- =====================================================================
+           LEFT COLUMN: Verified Booking Details Cards
+           ===================================================================== -->
+      <div class="review-content-column">
+        
+        <!-- 1. Property Summary Card -->
+        <section class="review-card-box">
+          <div class="review-card-header">
+            <h2 class="review-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              <span>Selected Stay</span>
+            </h2>
+            <a href="#" class="edit-details-btn" id="viewPropertyLink" style="font-size:0.8rem;">
+              <span>View property ↗</span>
+            </a>
+          </div>
+
+          <div class="review-prop-summary">
+            <img class="review-prop-thumb" id="reviewPropImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Property Preview" />
+            <div class="review-prop-info">
+              <span class="badge badge-green" id="reviewPropBadge" style="margin-bottom:4px;">Panoramic Sea View</span>
+              <h3 id="reviewPropTitle">Cliffside Ocean Song Eco Resort</h3>
+              <div class="review-prop-meta" id="reviewPropMeta">
+                <span>★ 4.95 (162 reviews)</span>
+                <span>·</span>
+                <span>📍 Karde Cliff Road, Dapoli</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Stay Dates & Timings Card -->
+        <section class="review-card-box">
+          <div class="review-card-header">
+            <h2 class="review-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>Stay Dates & Duration</span>
+            </h2>
+            <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);" id="reviewStayNightsGuests">2 Nights · 2 Guests · 1 Room</span>
+          </div>
+
+          <div class="stay-dates-review-grid">
+            <div class="date-review-box">
+              <span class="date-review-label">Check-In</span>
+              <span class="date-review-val" id="reviewCheckInDate">24 Aug 2026</span>
+              <span class="date-review-time" id="reviewCheckInTime">Check-in: 1:00 PM</span>
+            </div>
+
+            <div class="date-separator-arrow">→</div>
+
+            <div class="date-review-box">
+              <span class="date-review-label">Check-Out</span>
+              <span class="date-review-val" id="reviewCheckOutDate">26 Aug 2026</span>
+              <span class="date-review-time" id="reviewCheckOutTime">Check-out: 11:00 AM</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Room Details Card -->
+        <section class="review-card-box">
+          <div class="review-card-header">
+            <h2 class="review-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h10M7 11h2M15 11h2"></path></svg>
+              <span>Room Category</span>
+            </h2>
+            <span class="badge badge-sand">1 Room Selected</span>
+          </div>
+
+          <div class="room-review-content">
+            <img class="room-review-img" id="reviewRoomImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Room Category" />
+            <div class="room-review-details">
+              <h4 id="reviewRoomTitle">Panoramic Ocean Suite</h4>
+              <div style="font-size:0.86rem; color:var(--color-text-secondary); margin-bottom:4px;" id="reviewRoomSpecs">
+                🛏 1 King Bed · 👤 Capacity: 2 Guests
+              </div>
+              <div style="font-size:0.84rem; font-weight:700; color:var(--color-tropical-green); margin-bottom:6px;" id="reviewRoomMealPlan">
+                ✓ Artisan Konkan Breakfast Included
+              </div>
+              <div class="room-review-badges-row" id="reviewRoomAmenities">
+                <!-- Amenity tags injected -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Guest Details Card -->
+        <section class="review-card-box">
+          <div class="review-card-header">
+            <h2 class="review-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Guest Details</span>
+            </h2>
+            <button class="edit-details-btn" id="editGuestDetailsBtn">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              <span>Edit details</span>
+            </button>
+          </div>
+
+          <div class="guest-review-grid">
+            <div class="guest-info-item">
+              <span class="guest-info-label">Primary Guest</span>
+              <span class="guest-info-val" id="reviewGuestName">Aniket Kulkarni</span>
+            </div>
+
+            <div class="guest-info-item">
+              <span class="guest-info-label">Email Address</span>
+              <span class="guest-info-val" id="reviewGuestEmail">aniket.kulkarni@example.com</span>
+            </div>
+
+            <div class="guest-info-item">
+              <span class="guest-info-label">Mobile Number</span>
+              <span class="guest-info-val" id="reviewGuestPhone">+91 9820194820</span>
+            </div>
+          </div>
+
+          <div id="reviewExtraGuestsRow" style="margin-top:12px; padding-top:10px; border-top:1px dashed var(--color-border-subtle); display:none;"></div>
+        </section>
+
+        <!-- 5. Special Requests Card (Conditional) -->
+        <section class="review-card-box" id="reviewSpecialRequestsCard" style="display:none;">
+          <div class="review-card-header">
+            <h2 class="review-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Special Requests</span>
+            </h2>
+            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Subject to availability</span>
+          </div>
+          <div style="font-size:0.92rem; color:var(--color-text-primary); white-space:pre-line; line-height:1.6;" id="reviewSpecialRequestsContent"></div>
+        </section>
+
+        <!-- 6. Cancellation Policy Card -->
+        <section class="cancellation-review-card">
+          <div class="cancellation-pill-highlight" id="reviewCancellationPill">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>✓ Free cancellation until 22 Aug 2026</span>
+          </div>
+          <p style="font-size:0.9rem; color:var(--color-text-secondary); margin-bottom:10px;" id="reviewCancellationSummary">
+            Free cancellation until 22 Aug 2026 (24 hours prior to check-in). 100% refund guaranteed.
+          </p>
+          <a href="#" id="viewFullCancellationBtn" style="font-size:0.85rem; font-weight:700; color:var(--color-primary); text-decoration:underline;">
+            View full cancellation policy →
+          </a>
+        </section>
+
+        <!-- 7. Payment Step Notice -->
+        <div class="payment-step-notice-card">
+          <div>
+            <div style="font-weight:700; font-size:0.92rem; color:var(--color-text-primary);">Payment method selected on next step</div>
+            <div style="font-size:0.8rem; color:var(--color-text-secondary);">Secure 256-bit encrypted gateway</div>
+          </div>
+          <div class="payment-options-icons">
+            <span class="payment-chip-badge">UPI / QR</span>
+            <span class="payment-chip-badge">Credit / Debit</span>
+            <span class="payment-chip-badge">Net Banking</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           RIGHT COLUMN: Sticky Price Summary Sidebar Card
+           ===================================================================== -->
+      <aside class="review-summary-sidebar" aria-label="Booking Price Summary Sidebar">
+        <div class="review-summary-card">
+          
+          <!-- 15-Minute Hold Countdown -->
+          <div class="session-countdown-pill">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Price locked for <strong id="reviewSessionTimer">14:15</strong></span>
+          </div>
+
+          <h3 style="font-family:var(--font-heading); font-size:1.15rem; font-weight:700; margin-bottom:var(--space-md); padding-bottom:8px; border-bottom:1px solid var(--color-border-subtle);">
+            Price Summary
+          </h3>
+
+          <!-- Itemized Transparent Price Table -->
+          <table class="price-breakdown-table">
+            <tr>
+              <td>Room price (2 nights)</td>
+              <td id="reviewPriceBase">₹14,400</td>
+            </tr>
+            <tr>
+              <td style="color:var(--color-tropical-green);">Monsoon Special (-10%)</td>
+              <td style="color:var(--color-tropical-green);" id="reviewPriceDiscount">- ₹1,440</td>
+            </tr>
+            <tr>
+              <td>GST taxes & fees</td>
+              <td id="reviewPriceTaxes">+ ₹1,555</td>
+            </tr>
+            <tr class="price-total-row">
+              <td>Total Amount (INR)</td>
+              <td id="reviewPriceTotal">₹14,515</td>
+            </tr>
+          </table>
+
+          <!-- Expandable Price Calculation Explanation -->
+          <div>
+            <button class="price-math-toggle" id="priceMathToggle">
+              <span>How is this price calculated? ▾</span>
+            </button>
+            <div class="price-math-panel" id="priceMathPanel">
+              <div id="priceMathFormula"></div>
+            </div>
+          </div>
+
+          <!-- Primary CTA Button -->
+          <button class="proceed-payment-cta" id="proceedPaymentBtn">
+            <span>Proceed to Payment</span>
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+
+          <div style="text-align:center; font-size:0.78rem; color:var(--color-text-secondary); margin-top:12px;">
+            🔒 Safe & secure · Advance to Screen 08 Payment
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Mobile Sticky Bottom Bar (<= 992px)
+       ========================================================================= -->
+  <div class="mobile-review-bottom-bar">
+    <div>
+      <span style="font-size:0.72rem; color:var(--color-text-secondary); display:block;">Total payable</span>
+      <span style="font-size:1.15rem; font-weight:800; color:var(--color-primary);" id="mobileReviewTotal">₹14,515 total</span>
+    </div>
+    <button class="btn btn-primary" id="mobileProceedBtn" style="padding: 10px 18px;">
+      <span>Proceed to Payment</span>
+      <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       Session Exception Modals
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- 1. Price Changed Modal -->
+  <div class="modal-container" id="priceChangeModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-konkan-sun);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <h3 class="modal-title">Booking Price Updated</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close dialog">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.92rem; color:var(--color-text-secondary); margin-bottom:12px;">
+        Seasonal weekend rates have been updated by the property host.
+      </p>
+      <div class="price-change-card">
+        <div class="price-compare-row">
+          <span style="color:var(--color-text-secondary);">Previous Total:</span>
+          <span style="text-decoration:line-through; font-weight:600;" id="pricePrevVal">₹14,515</span>
+        </div>
+        <div class="price-compare-row" style="background:#F4FAFA; border-color:var(--color-primary);">
+          <span style="font-weight:700; color:var(--color-primary);">Current Total:</span>
+          <span style="font-size:1.25rem; font-weight:800; color:var(--color-primary);" id="priceUpdatedVal">₹14,815</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button class="btn btn-primary" id="acceptPriceUpdateBtn" style="width:100%;">
+          <span>Accept Updated Price</span>
+        </button>
+        <button class="btn btn-outline" id="returnToRoomsBtn" style="width:100%;">
+          <span>Return to Room Selection</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Room Unavailable Modal -->
+  <div class="modal-container" id="roomUnavailableModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-error);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <h3 class="modal-title">Room Unavailable</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.95rem; color:var(--color-text-secondary); margin-bottom:16px;">
+        This room is no longer available for your selected dates. Your search dates and guest details have been preserved.
+      </p>
+      <button class="btn btn-primary" id="unavailableChooseRoomBtn" style="width:100%;">
+        <span>Choose Another Room</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. Session Expired Modal -->
+  <div class="modal-container" id="sessionExpiredModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-konkan-sun);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <h3 class="modal-title">Session Expired</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.95rem; color:var(--color-text-secondary); margin-bottom:16px;">
+        Your 15-minute booking hold session has expired. Please search again to get fresh room inventory and pricing.
+      </p>
+      <button class="btn btn-primary" id="searchAgainBtn" style="width:100%;">
+        <span>Search Stays Again</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 4. Cancellation Policy Modal -->
+  <div class="modal-container" id="cancellationModal" role="dialog" aria-modal="true" style="max-width: 540px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Cancellation & Refund Policy</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="cancellationModalBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (Demonstrates Active, Price Changed, Unavailable, Expired, Error)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="SUCCESS" title="Active normal session">Active Session</button>
+    <button class="dev-state-btn" data-mode="PRICE_CHANGED" title="Simulate price change alert">Price Changed Alert</button>
+    <button class="dev-state-btn" data-mode="ROOM_UNAVAILABLE" title="Simulate room unavailable">Room Unavailable</button>
+    <button class="dev-state-btn" data-mode="EXPIRED" title="Simulate session expired">Expired Session</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="Simulate server error">Error State</button>
+  </aside>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/review.js"></script>
+</body>
+</html>

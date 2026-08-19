@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Antigravity / Gemini Brain Artifacts
+.gemini/
+.system_generated/
+scratch/

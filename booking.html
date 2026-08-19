@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — Guest Details & Booking Checkout</title>
+  <meta name="description" content="Enter main guest details, special requests, and tax invoicing for your verified Konkan coastal booking." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — Secure Booking Checkout" />
+  <meta property="og:description" content="Enter guest details and review your verified coastal stay reservation." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/booking.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body class="checkout-page-body">
+
+  <!-- =========================================================================
+       Focused Checkout Header (Distraction-Free)
+       ========================================================================= -->
+  <header class="checkout-header" id="checkoutHeader">
+    <div class="checkout-header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+            <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+          </svg>
+        </div>
+        <span>Konkan<span class="logo-text-accent">Trip</span></span>
+      </a>
+
+      <!-- Security Trust Badge -->
+      <div class="secure-badge-pill">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <span>🔒 Secure booking · 256-Bit SSL</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       5-Step Checkout Progress Bar
+       ========================================================================= -->
+  <section class="checkout-progress-section">
+    <div class="progress-steps-track">
+      
+      <!-- Step 1: Search (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>1. Search</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 2: Select Room (Completed) -->
+      <div class="step-item completed">
+        <div class="step-bubble">✓</div>
+        <span>2. Select Room</span>
+      </div>
+
+      <div class="step-connector completed"></div>
+
+      <!-- Step 3: Guest Details (Active) -->
+      <div class="step-item active">
+        <div class="step-bubble">3</div>
+        <span>3. Guest Details</span>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <!-- Step 4: Payment -->
+      <div class="step-item">
+        <div class="step-bubble">4</div>
+        <span>4. Payment</span>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <!-- Step 5: Confirmation -->
+      <div class="step-item">
+        <div class="step-bubble">5</div>
+        <span>5. Confirmation</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Main Checkout Stage (Two Columns: Form 65% | Summary 35%)
+       ========================================================================= -->
+  <main class="checkout-stage-container">
+    <div class="checkout-two-columns">
+
+      <!-- =====================================================================
+           LEFT COLUMN: Guest Details Form
+           ===================================================================== -->
+      <div class="checkout-form-column">
+        
+        <!-- 1. Main Guest Information Card -->
+        <section class="form-card-box">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
+            <div>
+              <h1 class="form-card-title">Who's staying?</h1>
+              <p class="form-card-subtitle">Enter the details of the main guest for this booking.</p>
+            </div>
+            <span class="badge badge-sand" style="font-size:0.75rem;">Screen 06 · Guest Details</span>
+          </div>
+
+          <!-- Logged-in Prefill Banner -->
+          <div class="prefill-user-banner" id="prefillUserBanner" style="display: none;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Signed in as <strong id="prefillNameSpan">Aniket Kulkarni</strong></span>
+            </div>
+            <button type="button" class="prefill-edit-btn" id="prefillEditBtn">Edit</button>
+          </div>
+
+          <!-- Guest Name Inputs -->
+          <div class="input-grid-2">
+            <div class="input-field-group">
+              <label class="field-label-persistent" for="guestFirstName">
+                <span>First name</span>
+                <span class="required">*</span>
+              </label>
+              <input type="text" id="guestFirstName" class="input-styled" placeholder="e.g. Aniket" required />
+            </div>
+
+            <div class="input-field-group">
+              <label class="field-label-persistent" for="guestLastName">
+                <span>Last name</span>
+                <span class="required">*</span>
+              </label>
+              <input type="text" id="guestLastName" class="input-styled" placeholder="e.g. Kulkarni" required />
+            </div>
+          </div>
+
+          <!-- Contact Inputs -->
+          <div class="input-grid-2">
+            <div class="input-field-group">
+              <label class="field-label-persistent" for="guestEmail">
+                <span>Email address</span>
+                <span class="required">*</span>
+              </label>
+              <input type="email" id="guestEmail" class="input-styled" placeholder="e.g. aniket@example.com" required />
+              <span style="font-size:0.75rem; color:var(--color-text-secondary);">Booking voucher will be sent to this email</span>
+            </div>
+
+            <div class="input-field-group">
+              <label class="field-label-persistent" for="guestPhone">
+                <span>Mobile number</span>
+                <span class="required">*</span>
+              </label>
+              <div class="phone-input-wrap">
+                <div class="country-code-pill">+91</div>
+                <input type="tel" id="guestPhone" class="input-styled" placeholder="10-digit mobile number" maxlength="10" required />
+              </div>
+              <span style="font-size:0.75rem; color:var(--color-text-secondary);">For stay confirmation & host contact</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Additional Guests Section (Rendered dynamically if adults > 1) -->
+        <section class="form-card-box" id="additionalGuestsSection" style="display: none;">
+          <h2 class="form-card-title">Additional Guests</h2>
+          <p class="form-card-subtitle">Names of other travellers accompanying the primary guest.</p>
+          <div id="additionalGuestsContainer"></div>
+        </section>
+
+        <!-- 3. Special Requests (Optional) -->
+        <section class="form-card-box">
+          <h2 class="form-card-title">Anything we should know?</h2>
+          <p class="form-card-subtitle">Special requests are subject to property availability and cannot always be guaranteed.</p>
+          
+          <div class="preset-chips-row">
+            <button type="button" class="preset-chip-btn" data-request-text="Ground floor room requested">Ground floor room</button>
+            <button type="button" class="preset-chip-btn" data-request-text="Late check-in (after 8:00 PM)">Late check-in</button>
+            <button type="button" class="preset-chip-btn" data-request-text="Extra pillows & towels">Extra pillows & towels</button>
+            <button type="button" class="preset-chip-btn" data-request-text="Pure vegetarian / Jain food preference">Pure vegetarian meals</button>
+          </div>
+
+          <textarea id="specialRequestsText" class="input-styled" rows="3" placeholder="Optional notes for host or room preferences..."></textarea>
+        </section>
+
+        <!-- 4. Expected Arrival Time -->
+        <section class="form-card-box">
+          <h2 class="form-card-title">Expected arrival time</h2>
+          <p class="form-card-subtitle">Helps the coastal host prepare your welcome drink and ensure your room is ready.</p>
+          
+          <select id="arrivalTimeSelect" class="input-styled" style="cursor: pointer;">
+            <option value="Flexible">I don't know my exact time yet</option>
+            <option value="12:00 PM – 2:00 PM">12:00 PM – 2:00 PM (Standard Check-in)</option>
+            <option value="2:00 PM – 4:00 PM">2:00 PM – 4:00 PM</option>
+            <option value="4:00 PM – 6:00 PM">4:00 PM – 6:00 PM</option>
+            <option value="After 6:00 PM">After 6:00 PM (Late Evening)</option>
+          </select>
+        </section>
+
+        <!-- 5. Tax Invoice / GST Progressive Disclosure -->
+        <section class="form-card-box">
+          <h2 class="form-card-title">Need a tax invoice?</h2>
+          <p class="form-card-subtitle">Select business booking if you need a GST input tax credit invoice.</p>
+
+          <div class="invoice-type-toggle">
+            <label class="radio-choice-card active" for="invoicePersonal">
+              <input type="radio" id="invoicePersonal" name="invoiceType" value="personal" checked />
+              <div>
+                <div style="font-weight:700;">Personal booking</div>
+                <div style="font-size:0.78rem; color:var(--color-text-secondary); font-weight:normal;">Standard customer receipt</div>
+              </div>
+            </label>
+
+            <label class="radio-choice-card" for="invoiceBusiness">
+              <input type="radio" id="invoiceBusiness" name="invoiceType" value="business" />
+              <div>
+                <div style="font-weight:700;">Business booking</div>
+                <div style="font-size:0.78rem; color:var(--color-text-secondary); font-weight:normal;">GSTIN invoice for input credit</div>
+              </div>
+            </label>
+          </div>
+
+          <!-- Progressive Disclosure GST Fields -->
+          <div class="gst-disclosure-panel" id="gstDisclosurePanel">
+            <div class="input-field-group">
+              <label class="field-label-persistent" for="companyName">Registered Company Name</label>
+              <input type="text" id="companyName" class="input-styled" placeholder="e.g. Kulkarni Design Studio LLP" />
+            </div>
+
+            <div class="input-grid-2">
+              <div class="input-field-group">
+                <label class="field-label-persistent" for="companyGstin">GSTIN Number</label>
+                <input type="text" id="companyGstin" class="input-styled" placeholder="15-digit GSTIN (e.g. 27AABCK1234F1Z8)" maxlength="15" />
+              </div>
+              <div class="input-field-group">
+                <label class="field-label-persistent" for="billingAddress">Registered Billing Address</label>
+                <input type="text" id="billingAddress" class="input-styled" placeholder="Company address with pin code" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Cancellation Notice & Terms Agreement Checkbox -->
+        <section class="form-card-box">
+          <div style="background:#F4FAFA; border:1px solid rgba(8,126,139,0.2); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:var(--space-md); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:8px; font-size:0.88rem; color:var(--color-tropical-green); font-weight:700;">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+              <span>Free cancellation until 22 Aug (24h prior)</span>
+            </div>
+            <a href="#" id="viewPolicyModalLink" style="font-size:0.84rem; color:var(--color-primary); font-weight:700; text-decoration:underline;">View cancellation policy</a>
+          </div>
+
+          <label class="terms-agreement-box" for="termsCheckbox">
+            <input type="checkbox" id="termsCheckbox" />
+            <span>
+              I agree to KonkanTrip's <a href="#" style="color:var(--color-primary); font-weight:600; text-decoration:underline;">booking terms</a>, <a href="#" style="color:var(--color-primary); font-weight:600; text-decoration:underline;">cancellation policy</a> and <a href="#" style="color:var(--color-primary); font-weight:600; text-decoration:underline;">privacy policy</a>.
+            </span>
+          </label>
+
+          <!-- Validation Alert Banner -->
+          <div class="checkout-alert-banner" id="checkoutAlertBanner" role="alert">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span id="checkoutAlertText">Please complete all required fields.</span>
+          </div>
+
+          <!-- Primary Submit CTA -->
+          <button type="button" class="review-booking-cta" id="reviewBookingCta">
+            <span>Review Booking</span>
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </section>
+
+      </div>
+
+      <!-- =====================================================================
+           RIGHT COLUMN: Sticky Booking Summary Card
+           ===================================================================== -->
+      <aside class="checkout-summary-sidebar" aria-label="Reservation Summary Sidebar">
+        <div class="summary-sidebar-card">
+          
+          <!-- 15-Minute Session Hold Countdown -->
+          <div class="session-countdown-pill">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Holding room for <strong id="sessionCountdownTimer">15:00</strong></span>
+          </div>
+
+          <!-- Property Preview -->
+          <div class="property-mini-preview">
+            <img class="mini-preview-img" id="summaryPropImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Property Preview" />
+            <div class="mini-preview-details">
+              <h3 id="summaryPropTitle" style="font-size:1rem; font-weight:700;">Cliffside Ocean Song Eco Resort</h3>
+              <div style="font-size:0.8rem; color:var(--color-text-secondary); margin-bottom:2px;" id="summaryPropLocation">📍 Karde Beach, Dapoli</div>
+              <span class="badge badge-green" style="font-size:0.72rem;" id="summaryPropRating">★ 4.95 (162 reviews)</span>
+            </div>
+          </div>
+
+          <!-- Dates & Guests Row -->
+          <div class="mini-stay-meta-row">
+            <span>Dates</span>
+            <strong id="summaryDates">24 Aug – 26 Aug</strong>
+          </div>
+
+          <div class="mini-stay-meta-row">
+            <span>Duration</span>
+            <strong id="summaryNights">2 nights</strong>
+          </div>
+
+          <div class="mini-stay-meta-row">
+            <span>Guests & Rooms</span>
+            <strong id="summaryGuests">2 Guests · 1 Room</strong>
+          </div>
+
+          <div class="mini-stay-meta-row" style="border-bottom:1px solid var(--color-border-subtle); padding-bottom:8px; margin-bottom:8px;">
+            <span>Room category</span>
+            <strong id="summaryRoomName" style="color:var(--color-primary);">Panoramic Ocean Suite</strong>
+          </div>
+
+          <!-- Itemized Transparent Price Math -->
+          <table class="price-breakdown-table">
+            <tr>
+              <td>Room price (2 nights)</td>
+              <td id="summaryBasePrice">₹14,400</td>
+            </tr>
+            <tr>
+              <td style="color:var(--color-tropical-green);">Monsoon Special (-10%)</td>
+              <td style="color:var(--color-tropical-green);" id="summaryDiscount">- ₹1,440</td>
+            </tr>
+            <tr>
+              <td>GST taxes & fees</td>
+              <td id="summaryTaxes">+ ₹1,555</td>
+            </tr>
+            <tr class="price-total-row">
+              <td>Total Amount</td>
+              <td id="summaryTotal">₹14,515</td>
+            </tr>
+          </table>
+
+          <div style="text-align:center; font-size:0.78rem; color:var(--color-text-secondary); margin-top:12px;">
+            🛡 Transparent pricing · No hidden booking charges
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Mobile Sticky Bottom Bar (<= 992px)
+       ========================================================================= -->
+  <div class="mobile-checkout-bottom-bar">
+    <div>
+      <span style="font-size:0.72rem; color:var(--color-text-secondary); display:block;">Total price</span>
+      <span style="font-size:1.15rem; font-weight:800; color:var(--color-primary);" id="mobileStickyTotal">₹14,515 total</span>
+    </div>
+    <button class="btn btn-primary" id="mobileReviewCta" style="padding: 10px 18px;">
+      <span>Review Booking</span>
+      <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       Price Change Alert Modal Dialog
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <div class="modal-container" id="priceChangeModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-konkan-sun);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <h3 class="modal-title">Price Updated</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close dialog">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p style="font-size:0.92rem; color:var(--color-text-secondary); margin-bottom:12px;">
+        Seasonal weekend rates have been refreshed by the property host while you were reserving this stay.
+      </p>
+
+      <div class="price-change-card">
+        <div class="price-compare-row">
+          <span style="color:var(--color-text-secondary);">Previous Total:</span>
+          <span style="text-decoration:line-through; font-weight:600;" id="pricePrevVal">₹14,515</span>
+        </div>
+        <div class="price-compare-row" style="background:#F4FAFA; border-color:var(--color-primary);">
+          <span style="font-weight:700; color:var(--color-primary);">Updated Total:</span>
+          <span style="font-size:1.25rem; font-weight:800; color:var(--color-primary);" id="priceUpdatedVal">₹14,815</span>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button class="btn btn-primary" id="acceptPriceChangeBtn" style="width:100%;">
+          <span>Continue with Updated Price</span>
+        </button>
+        <button class="btn btn-outline" id="chooseOtherRoomBtn" style="width:100%;">
+          <span>Choose Another Room</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Cancellation Policy Modal
+       ========================================================================= -->
+  <div class="modal-container" id="cancellationModal" role="dialog" aria-modal="true" style="max-width: 540px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Cancellation & Refund Policy</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="cancellationModalBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (Demonstrates Blank, Prefilled Profile, Price Change, Error)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="PREFILLED_USER" title="Prefilled with customer profile">Prefilled Profile</button>
+    <button class="dev-state-btn" data-mode="SUCCESS" title="Blank new customer form">Blank Form</button>
+    <button class="dev-state-btn" data-mode="PRICE_CHANGED_ALERT" title="Simulate price change dialog">Price Changed Alert</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="Simulate server error">Error State</button>
+  </aside>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

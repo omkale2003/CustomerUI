@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — My Booking & Reservation Details</title>
+  <meta name="description" content="View and manage your confirmed Konkan coastal stay reservation, download confirmation voucher, inspect stay dates, room specifications, and cancellation policies." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — My Booking Details" />
+  <meta property="og:description" content="Manage your verified coastal stay reservation." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/booking-details.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body class="booking-details-page-body">
+
+  <!-- =========================================================================
+       Standard Customer Navigation Header
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+            <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+          </svg>
+        </div>
+        <span>Konkan<span class="logo-text-accent">Trip</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="results.html" class="nav-link">Stays</a>
+        <a href="index.html#experiencesSection" class="nav-link">Experiences</a>
+        <a href="search.html" class="nav-link">Destinations</a>
+        <a href="index.html#seasonalSection" class="nav-link">Offers</a>
+      </nav>
+
+      <!-- Header Action Items -->
+      <div class="header-actions">
+        <button class="header-action-btn" title="Currency" style="font-size: 0.85rem; font-weight: 600;">
+          <span>₹ INR</span>
+        </button>
+
+        <button class="header-action-btn" aria-label="View Saved Wishlist" onclick="window.location.href='index.html#wishlist'">
+          <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="action-count-badge">2</span>
+          <span>Wishlist</span>
+        </button>
+
+        <button class="header-action-btn active" aria-label="View My Booked Trips">
+          <svg class="icon-inline" style="color:var(--color-primary);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span style="color:var(--color-primary); font-weight:700;">My Trips</span>
+        </button>
+
+        <button class="user-profile-pill" aria-label="Account Menu">
+          <div class="user-avatar-circle">AK</div>
+          <span style="font-weight: 600; font-size: 0.9rem;">Aniket</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Booking Details Stage
+       ========================================================================= -->
+  <main class="booking-details-container">
+    
+    <!-- Subtle Breadcrumbs Navigation -->
+    <nav class="breadcrumb-nav-bar" aria-label="Breadcrumbs">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html" class="breadcrumb-link">Home</a></li>
+        <li class="breadcrumb-separator">›</li>
+        <li><a href="#" class="breadcrumb-link">My Trips</a></li>
+        <li class="breadcrumb-separator">›</li>
+        <li class="breadcrumb-current" aria-current="page">Booking Details</li>
+      </ol>
+    </nav>
+
+    <!-- Booking Header Block -->
+    <section class="booking-header-block">
+      <div class="booking-title-group">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:2px;">
+          <span class="status-badge-pill confirmed" id="detailsStatusPill">✓ Confirmed</span>
+          <span class="badge badge-sand">Screen 10 · Management</span>
+        </div>
+        <h1 class="booking-main-heading">
+          <span>Booking Details</span>
+        </h1>
+        <div class="booking-meta-subtitle">
+          <span>Reference:</span>
+          <button type="button" class="ref-copy-pill" id="detailsCopyRefBtn" title="Copy reference to clipboard">
+            <span id="detailsBookingRef">KT-BK-890214</span>
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+          <span>·</span>
+          <span id="detailsBookedOn">Booked on 19 Aug 2026, 3:30 PM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Not Found State Card (Hidden by default) -->
+    <div id="bookingNotFoundCard" style="display:none; background:#fff; border-radius:var(--radius-xl); padding:48px 24px; text-align:center; border:1px solid var(--color-border-subtle); margin-bottom:var(--space-2xl);">
+      <div class="no-results-icon-bubble" style="margin-bottom:16px;">
+        <svg class="icon-inline" style="width:42px; height:42px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </div>
+      <h2 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:800; margin-bottom:8px;">Booking Not Found</h2>
+      <p style="color:var(--color-text-secondary); max-width:440px; margin:0 auto 20px;">
+        We couldn't find this booking. Please check your booking reference or try searching in your account trips.
+      </p>
+      <a href="index.html" class="btn btn-primary"><span>Go to My Trips</span></a>
+    </div>
+
+    <!-- API Error Card (Hidden by default) -->
+    <div id="bookingApiErrorCard" style="display:none; background:#fff; border-radius:var(--radius-xl); padding:48px 24px; text-align:center; border:1.5px solid var(--color-error); margin-bottom:var(--space-2xl);">
+      <div class="api-error-icon-bubble" style="margin-bottom:16px;">
+        <svg class="icon-inline" style="width:42px; height:42px;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      </div>
+      <h2 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:800; margin-bottom:8px;">Unable to Load Booking</h2>
+      <p id="apiErrorDescText" style="color:var(--color-text-secondary); max-width:440px; margin:0 auto 20px;">
+        We couldn't load your booking details right now. Please check your connection and try again.
+      </p>
+      <button class="btn btn-primary" onclick="window.konkanBookingDetails.loadBookingDetails()"><span>Try Again</span></button>
+    </div>
+
+    <!-- Main Two-Column Grid -->
+    <div class="booking-details-grid" id="mainBookingGridContainer">
+
+      <!-- =====================================================================
+           LEFT COLUMN: Main Booking Information Cards
+           ===================================================================== -->
+      <div class="booking-main-column">
+        
+        <!-- 1. Property Section Card -->
+        <section class="booking-section-card">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              <span>Property Details</span>
+            </h2>
+            <a href="#" class="edit-details-btn" id="detailsViewPropBtn" style="font-size:0.8rem;">
+              <span>View Property →</span>
+            </a>
+          </div>
+
+          <div class="property-details-row">
+            <img class="property-details-thumb" id="detailsPropImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Property Image" />
+            <div class="property-details-info">
+              <span class="badge badge-green" id="detailsPropBadge" style="margin-bottom:4px;">Panoramic Sea View</span>
+              <h3 id="detailsPropTitle">Cliffside Ocean Song Eco Resort</h3>
+              <div class="property-details-meta">
+                <span id="detailsPropRating">★ 4.95 (162 reviews)</span>
+                <span>·</span>
+                <span id="detailsPropLocation">📍 Karde Cliff Road, Dapoli, Maharashtra</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Stay Details Card ("Your Stay") -->
+        <section class="booking-section-card">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>Your Stay</span>
+            </h2>
+            <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);" id="detailsStayDuration">2 Nights Duration</span>
+          </div>
+
+          <div class="stay-summary-3col">
+            <div class="stay-col-cell">
+              <span class="stay-col-header">Check-In</span>
+              <span class="stay-col-value" id="detailsCheckInDate">24 Aug 2026</span>
+              <span class="stay-col-subtext" id="detailsCheckInTime">From 1:00 PM</span>
+            </div>
+
+            <div class="stay-col-cell">
+              <span class="stay-col-header">Check-Out</span>
+              <span class="stay-col-value" id="detailsCheckOutDate">26 Aug 2026</span>
+              <span class="stay-col-subtext" id="detailsCheckOutTime">Until 11:00 AM</span>
+            </div>
+
+            <div class="stay-col-cell">
+              <span class="stay-col-header">Guests & Rooms</span>
+              <span class="stay-col-value" id="detailsStayGuests">2 Adults · 1 Room</span>
+              <span class="stay-col-subtext">Private Stay</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Room Details Card -->
+        <section class="booking-section-card">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h10M7 11h2M15 11h2"></path></svg>
+              <span>Room Category</span>
+            </h2>
+            <span class="badge badge-sand">1 Room Reserved</span>
+          </div>
+
+          <div class="room-details-row">
+            <img class="room-details-thumb" id="detailsRoomImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Room Photo" />
+            <div class="room-details-content">
+              <h4 id="detailsRoomTitle">Panoramic Ocean Suite</h4>
+              <div style="font-size:0.86rem; color:var(--color-text-secondary); margin-bottom:4px;" id="detailsRoomSpecs">
+                🛏 1 King Bed · 👤 Capacity: 2 Guests
+              </div>
+              <div style="font-size:0.84rem; font-weight:700; color:var(--color-tropical-green); margin-bottom:8px;" id="detailsRoomMealPlan">
+                ✓ Artisan Konkan Breakfast Included
+              </div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;" id="detailsRoomAmenities">
+                <!-- Amenities Injected -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Guest Details Card -->
+        <section class="booking-section-card">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Guest Details</span>
+            </h2>
+          </div>
+
+          <div class="guest-details-grid">
+            <div class="guest-field-box">
+              <span class="guest-field-label">Primary Guest</span>
+              <span class="guest-field-val" id="detailsGuestName">Aniket Kulkarni</span>
+            </div>
+
+            <div class="guest-field-box">
+              <span class="guest-field-label">Email Address</span>
+              <span class="guest-field-val" id="detailsGuestEmail">aniket.kulkarni@example.com</span>
+            </div>
+
+            <div class="guest-field-box">
+              <span class="guest-field-label">Mobile Number</span>
+              <span class="guest-field-val" id="detailsGuestPhone">+91 9820194820</span>
+            </div>
+          </div>
+
+          <div id="detailsExtraGuestsRow" style="margin-top:12px; padding-top:10px; border-top:1px dashed var(--color-border-subtle); display:none;"></div>
+        </section>
+
+        <!-- 5. Special Requests (Conditional) -->
+        <section class="booking-section-card" id="detailsSpecialRequestsCard" style="display:none;">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Special Requests</span>
+            </h2>
+            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Provided to Host</span>
+          </div>
+          <div style="font-size:0.92rem; color:var(--color-text-primary); white-space:pre-line; line-height:1.6;" id="detailsSpecialRequestsContent"></div>
+        </section>
+
+        <!-- 6. Cancellation Policy Card & Trigger -->
+        <section class="booking-section-card" id="detailsCancellationCard">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-tropical-green);" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Cancellation Policy</span>
+            </h2>
+          </div>
+
+          <div class="cancellation-card-highlight">
+            <p style="font-size:0.92rem; color:var(--color-text-primary); margin-bottom:12px; line-height:1.5;" id="detailsCancellationText">
+              Free cancellation until 22 Aug 2026 (24 hours prior to check-in). 100% full refund guaranteed.
+            </p>
+            <button type="button" class="cancel-booking-btn" id="detailsCancelBookingBtn">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+              <span>Cancel Booking</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- 7. Vertical Booking Status Timeline -->
+        <section class="booking-section-card">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Reservation Timeline</span>
+            </h2>
+          </div>
+
+          <div class="details-status-timeline" id="detailsStatusTimeline">
+            <!-- Timeline nodes injected dynamically -->
+          </div>
+        </section>
+
+        <!-- 8. Property & Platform Contact Cards -->
+        <section class="booking-section-card">
+          <div class="section-card-header">
+            <h2 class="section-card-title">
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Contact & Assistance</span>
+            </h2>
+          </div>
+
+          <div class="contact-boxes-grid">
+            <!-- Property Host Contact -->
+            <div class="contact-sub-card">
+              <div style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">Property Host</div>
+              <h4 style="font-size:1.05rem; font-weight:800; color:var(--color-text-primary); margin:4px 0;" id="detailsHostName">Ketan & Dr. Meera Salvi</h4>
+              <div style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:10px;">
+                Phone: <strong id="detailsHostPhone">+91 98201 45890</strong><br />
+                Address: <span id="detailsHostAddress">Karde Cliff Road, Dapoli</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" id="contactHostBtn" style="width:100%;">
+                <span>Contact Property</span>
+              </button>
+            </div>
+
+            <!-- KonkanTrip Platform Support -->
+            <div class="contact-sub-card">
+              <div style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">KonkanTrip Support</div>
+              <h4 style="font-size:1.05rem; font-weight:800; color:var(--color-text-primary); margin:4px 0;">24/7 Concierge</h4>
+              <div style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:10px;">
+                Email: <strong>support@konkantrip.com</strong><br />
+                Toll-Free: <strong>1800-209-KONKAN</strong>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" id="detailsSupportBtn" style="width:100%;">
+                <span>Contact Support</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- =====================================================================
+           RIGHT COLUMN: Sticky Actions & Financial Summary Sidebar
+           ===================================================================== -->
+      <aside class="booking-actions-sidebar" aria-label="Booking Actions Sidebar">
+        <div class="sidebar-summary-card">
+          
+          <div class="sidebar-status-banner">
+            <div>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase; display:block;">Current Status</span>
+              <span class="status-badge-pill confirmed" id="sidebarStatusPill" style="margin-top:4px;">✓ Confirmed</span>
+            </div>
+            <div style="text-align:right;">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase; display:block;">Total Paid</span>
+              <span style="font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:var(--color-primary);" id="sidebarTotalAmount">₹14,515</span>
+            </div>
+          </div>
+
+          <!-- Price Table -->
+          <table class="price-breakdown-table">
+            <tr>
+              <td>Room price</td>
+              <td id="sidebarRoomPrice">₹14,400</td>
+            </tr>
+            <tr>
+              <td style="color:var(--color-tropical-green);">Monsoon Special Discount</td>
+              <td style="color:var(--color-tropical-green);" id="sidebarDiscount">- ₹1,440</td>
+            </tr>
+            <tr>
+              <td>GST taxes & fees</td>
+              <td id="sidebarTaxes">+ ₹1,555</td>
+            </tr>
+          </table>
+
+          <div style="font-size:0.84rem; color:var(--color-text-secondary); margin-top:8px; padding-top:8px; border-top:1px solid var(--color-border-subtle);">
+            Paid via <strong id="sidebarPayMethod">UPI (Google Pay)</strong> on <span id="sidebarPaidDate">19 Aug 2026</span>
+          </div>
+
+          <!-- Sidebar Actions Stack -->
+          <div class="sidebar-cta-stack">
+            <button type="button" class="sidebar-primary-btn" id="sidebarDownloadBtn">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download Confirmation Voucher</span>
+            </button>
+
+            <button type="button" class="sidebar-secondary-btn" id="sidebarSupportBtn">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <span>Contact Support</span>
+            </button>
+
+            <button type="button" class="cancel-booking-btn" id="sidebarCancelBtn" style="width:100%; justify-content:center;">
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+              <span>Cancel Booking</span>
+            </button>
+
+            <button type="button" class="btn btn-outline" id="sidebarRefundStatusBtn" style="display:none; width:100%;">
+              <span>View Refund Status</span>
+            </button>
+          </div>
+
+          <div style="text-align:center; font-size:0.78rem; color:var(--color-text-secondary); margin-top:12px;">
+            🔒 KonkanTrip Verified Booking
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Mobile Sticky Bottom Action Bar (<= 992px)
+       ========================================================================= -->
+  <div class="mobile-booking-action-bar" id="mobileBookingActionBar">
+    <button class="btn btn-outline" id="mobileContactBtn" style="flex:1; padding:10px;">
+      <span>Contact Host</span>
+    </button>
+    <button class="btn btn-primary" id="mobileManageBtn" style="flex:1; padding:10px;">
+      <span>Manage Booking</span>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       Modals
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- 1. Cancellation Confirmation Modal -->
+  <div class="modal-container" id="cancellationModal" role="dialog" aria-modal="true" style="max-width: 500px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-error);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        <h3 class="modal-title">Cancel this booking?</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.92rem; color:var(--color-text-secondary); margin-bottom:8px;">
+        You are about to cancel your reservation for:
+      </p>
+      <div style="background:#F8FCFC; padding:12px; border-radius:8px; margin-bottom:12px;">
+        <strong id="cancelModalPropTitle" style="display:block; font-size:0.98rem;">Cliffside Ocean Song Eco Resort</strong>
+        <span id="cancelModalDates" style="font-size:0.85rem; color:var(--color-text-secondary);">24 Aug 2026 – 26 Aug 2026</span>
+      </div>
+
+      <div class="cancellation-refund-box">
+        <div class="refund-math-row">
+          <span>Amount paid:</span>
+          <span id="cancelModalAmountPaid">₹14,515</span>
+        </div>
+        <div class="refund-math-row">
+          <span style="color:var(--color-tropical-green);">Cancellation fee (Free window):</span>
+          <span style="color:var(--color-tropical-green);">₹0</span>
+        </div>
+        <div class="refund-math-row total-refund">
+          <span>Estimated refund:</span>
+          <span id="cancelModalRefundEst">₹14,515</span>
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-bottom:16px;">
+        Refund will be credited back to your original payment mode within 2–4 bank working days.
+      </p>
+
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-outline" data-action="close-modal" style="flex:1;">
+          <span>Keep Booking</span>
+        </button>
+        <button class="btn btn-danger" id="confirmCancelSubmitBtn" style="flex:1; background-color:var(--color-error); color:#fff; border:none;">
+          <span>Confirm Cancellation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Contact Property Modal -->
+  <div class="modal-container" id="contactModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Contact Property Host</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="contactModalBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- 3. Support Modal -->
+  <div class="modal-container" id="supportModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <h3 class="modal-title">KonkanTrip Support</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="supportModalBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (10 Booking States)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="CONFIRMED" title="Normal confirmed booking">Confirmed</button>
+    <button class="dev-state-btn" data-mode="UPCOMING" title="Upcoming stay">Upcoming</button>
+    <button class="dev-state-btn" data-mode="PAYMENT_PENDING" title="Payment pending state">Payment Pending</button>
+    <button class="dev-state-btn" data-mode="CONFIRMATION_PENDING" title="Host confirming state">Confirming</button>
+    <button class="dev-state-btn" data-mode="CANCELLED" title="Cancelled booking">Cancelled</button>
+    <button class="dev-state-btn" data-mode="REFUNDED" title="Refunded state">Refunded</button>
+    <button class="dev-state-btn" data-mode="COMPLETED" title="Past completed stay">Completed</button>
+    <button class="dev-state-btn" data-mode="NOT_FOUND" title="Booking not found">Not Found</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="API error state">Error</button>
+  </aside>
+
+  <!-- =========================================================================
+       Standard Customer Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <div class="logo-symbol" style="width:34px; height:34px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+              </svg>
+            </div>
+            <span>KonkanTrip</span>
+          </div>
+          <p class="footer-brand-text">
+            India's dedicated coastal travel platform connecting travelers with verified beachfront stays, heritage wadas, and authentic local experiences across the Konkan belt.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Destinations</h4>
+          <ul class="footer-links-list">
+            <li><a href="results.html?dest=Dapoli" class="footer-link">Dapoli & Murud</a></li>
+            <li><a href="results.html?dest=Tarkarli" class="footer-link">Tarkarli & Devbagh</a></li>
+            <li><a href="results.html?dest=Ganpatipule" class="footer-link">Ganpatipule Beach</a></li>
+            <li><a href="results.html?dest=Malvan" class="footer-link">Malvan & Sindhudurg</a></li>
+            <li><a href="results.html?dest=Alibaug" class="footer-link">Alibaug & Kihim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Stay Types</h4>
+          <ul class="footer-links-list">
+            <li><a href="results.html?type=villas" class="footer-link">Beachfront Villas</a></li>
+            <li><a href="results.html?type=wada" class="footer-link">Heritage Wada Homestays</a></li>
+            <li><a href="results.html?type=cliffside" class="footer-link">Cliffside Ocean Resorts</a></li>
+            <li><a href="results.html?type=eco" class="footer-link">Eco Bamboo Cottages</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" class="footer-link">About KonkanTrip</a></li>
+            <li><a href="#" class="footer-link">Host with Us</a></li>
+            <li><a href="#" class="footer-link">Safety Guidelines</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 KonkanTrip Hospitality Pvt. Ltd. All rights reserved. Made for the love of the Konkan coast.</div>
+        <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/booking-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KonkanTrip — Booking Confirmed! | Your Coastal Stay is Set</title>
+  <meta name="description" content="Your stay is confirmed! View your unique booking reference, check-in timings, room specifications, and download your reservation voucher." />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KonkanTrip — Booking Confirmed!" />
+  <meta property="og:description" content="Your coastal stay reservation has been officially confirmed." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/confirmation.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body class="confirmation-page-body">
+
+  <!-- =========================================================================
+       Minimal Confirmation Header
+       ========================================================================= -->
+  <header class="confirmation-header" id="confirmationHeader">
+    <div class="confirmation-header-inner">
+      <div class="header-left-title-group">
+        <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
+          <div class="logo-symbol">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+              <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
+              <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
+            </svg>
+          </div>
+          <span>Konkan<span class="logo-text-accent">Trip</span></span>
+        </a>
+        <span class="header-sub-tag">Booking Confirmation</span>
+      </div>
+
+      <div class="secure-badge-pill" style="background:#EAF6F0; color:var(--color-tropical-green); border-color:rgba(46,125,91,0.3);">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span>✓ Officially Confirmed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Confirmation Stage
+       ========================================================================= -->
+  <main class="confirmation-stage-container">
+
+    <!-- Error State Notice (If Any) -->
+    <div class="checkout-alert-banner" id="confirmationErrorBanner" style="display:none; margin-bottom:var(--space-lg);" role="alert">
+      <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>We received your payment, but we're experiencing a delay syncing with the host. Your booking is protected and no additional payment is required.</span>
+    </div>
+
+    <!-- 1. Success Hero Section -->
+    <section class="success-hero-card">
+      <div class="success-checkmark-circle">
+        <svg class="icon-inline" style="width:36px; height:36px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+
+      <h1 class="success-main-headline">Booking Confirmed!</h1>
+      
+      <p class="success-stay-subtext">
+        Your stay at <strong id="heroStayTitle" style="color:var(--color-text-primary);">Cliffside Ocean Song Eco Resort</strong> is successfully booked and inventory has been reserved.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+        <!-- Booking Reference Box with Copy Button -->
+        <div class="booking-ref-badge-wrap">
+          <span class="booking-ref-label">Booking Reference:</span>
+          <span class="booking-ref-code" id="bookingRefCode">KT-BK-890214</span>
+          <button type="button" class="copy-ref-btn" id="copyRefBtn" title="Copy Reference to Clipboard" aria-label="Copy booking reference">
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+
+        <span class="badge badge-sand" id="alreadyConfirmedBadge" style="display:none; padding:8px 14px; font-size:0.8rem;">
+          ✓ Booking Already Confirmed
+        </span>
+      </div>
+
+      <div class="confirmation-sent-notice">
+        📧 A confirmation voucher has been sent to your registered email and mobile number.
+      </div>
+    </section>
+
+    <!-- 2. Primary Property / Booking Summary Card -->
+    <section class="confirmation-card-box">
+      <div class="card-section-title">
+        <span>Reserved Coastal Stay</span>
+        <span class="badge badge-green" id="confirmedPropBadge">Panoramic Sea View</span>
+      </div>
+
+      <div class="confirmed-prop-row">
+        <img class="confirmed-prop-thumb" id="confirmedPropImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Stay Preview" />
+        <div class="confirmed-prop-info">
+          <h3 id="confirmedPropTitle">Cliffside Ocean Song Eco Resort</h3>
+          <div class="confirmed-prop-meta">
+            <span id="confirmedPropRating">★ 4.95 (162 reviews)</span>
+            <span>·</span>
+            <span id="confirmedPropLocation">📍 Karde Cliff Road, Dapoli</span>
+          </div>
+          <span class="badge badge-sand" style="font-size:0.75rem;">Screen 09 · Confirmation Voucher</span>
+        </div>
+      </div>
+
+      <!-- 3. Stay Details (3-Column Grid on Desktop, Stacked on Mobile) -->
+      <div class="stay-details-3col">
+        <div class="stay-col-item">
+          <span class="stay-col-label">Check-In</span>
+          <span class="stay-col-val" id="confirmedCheckInDate">24 Aug 2026</span>
+          <span class="stay-col-sub" id="confirmedCheckInTime">From 1:00 PM</span>
+        </div>
+
+        <div class="stay-col-item">
+          <span class="stay-col-label">Check-Out</span>
+          <span class="stay-col-val" id="confirmedCheckOutDate">26 Aug 2026</span>
+          <span class="stay-col-sub" id="confirmedCheckOutTime">Until 11:00 AM</span>
+        </div>
+
+        <div class="stay-col-item">
+          <span class="stay-col-label">Guests & Duration</span>
+          <span class="stay-col-val" id="confirmedStayGuests">2 Adults · 1 Room</span>
+          <span class="stay-col-sub" id="confirmedStayNights">2 Nights Stay</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Room Details Card -->
+    <section class="confirmation-card-box">
+      <div class="card-section-title">
+        <span>Room Information</span>
+        <span class="badge badge-sand">1 Room Reserved</span>
+      </div>
+
+      <div class="confirmed-room-row">
+        <img class="confirmed-room-thumb" id="confirmedRoomImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Room Photo" />
+        <div class="confirmed-room-details">
+          <h4 id="confirmedRoomTitle">Panoramic Ocean Suite</h4>
+          <div style="font-size:0.86rem; color:var(--color-text-secondary); margin-bottom:4px;" id="confirmedRoomSpecs">
+            🛏 1 King Bed · 👤 Capacity: 2 Guests
+          </div>
+          <div style="font-size:0.84rem; font-weight:700; color:var(--color-tropical-green); margin-bottom:8px;" id="confirmedRoomMealPlan">
+            ✓ Artisan Konkan Breakfast Included
+          </div>
+          <div style="display:flex; gap:6px; flex-wrap:wrap;" id="confirmedRoomAmenities">
+            <!-- Amenities Injected -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Payment Summary Card (Never shows Pay Again) -->
+    <section class="confirmation-card-box">
+      <div class="card-section-title">
+        <span>Payment Summary</span>
+        <span class="badge badge-green">✓ Paid & Verified</span>
+      </div>
+
+      <table class="confirmed-payment-table">
+        <tr>
+          <td>Room price (2 nights)</td>
+          <td id="payRoomPrice">₹14,400</td>
+        </tr>
+        <tr>
+          <td style="color:var(--color-tropical-green);">Monsoon Special Discount (-10%)</td>
+          <td style="color:var(--color-tropical-green);" id="payDiscount">- ₹1,440</td>
+        </tr>
+        <tr>
+          <td>GST taxes & fees</td>
+          <td id="payTaxes">+ ₹1,555</td>
+        </tr>
+        <tr class="confirmed-total-row">
+          <td>Total Amount Paid</td>
+          <td id="payTotal" style="color:var(--color-primary);">₹14,515</td>
+        </tr>
+      </table>
+
+      <div class="payment-method-confirmed-pill">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase; display:block;">Payment Method</span>
+          <strong id="payMethod" style="color:var(--color-text-primary);">UPI (Google Pay)</strong>
+        </div>
+        <div style="text-align:right;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase; display:block;">Transaction ID</span>
+          <span style="font-size:0.82rem; font-family:monospace; font-weight:700;" id="payTxnId">TXN-982019482</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Vertical Booking Status Timeline -->
+    <section class="confirmation-card-box">
+      <div class="card-section-title">
+        <span>Reservation Status Timeline</span>
+      </div>
+
+      <div class="booking-status-timeline">
+        <div class="timeline-step-item">
+          <div class="timeline-node-icon">✓</div>
+          <div class="timeline-title">Booking Created</div>
+          <div class="timeline-sub">Reservation initiated and session registered</div>
+        </div>
+
+        <div class="timeline-step-item">
+          <div class="timeline-node-icon">✓</div>
+          <div class="timeline-title">Payment Received & Verified</div>
+          <div class="timeline-sub">₹14,515 confirmed through secure gateway</div>
+        </div>
+
+        <div class="timeline-step-item">
+          <div class="timeline-node-icon">✓</div>
+          <div class="timeline-title">Room Inventory Reserved</div>
+          <div class="timeline-sub">Host dashboard notified and room locked</div>
+        </div>
+
+        <div class="timeline-step-item">
+          <div class="timeline-node-icon upcoming">●</div>
+          <div class="timeline-title" style="color:var(--color-primary);">Stay Upcoming</div>
+          <div class="timeline-sub">Check-in on 24 Aug 2026, 1:00 PM</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. What Happens Next Section -->
+    <section class="confirmation-card-box">
+      <div class="card-section-title">
+        <span>Your stay is all set 🌊</span>
+      </div>
+
+      <div class="what-next-grid">
+        <div class="next-step-box">
+          <div class="next-step-num">1</div>
+          <div class="next-step-title">Booking Confirmed</div>
+          <p class="next-step-desc">Your reservation has been locked with the host and your confirmation voucher is ready.</p>
+        </div>
+
+        <div class="next-step-box">
+          <div class="next-step-num">2</div>
+          <div class="next-step-title">Before Your Trip</div>
+          <p class="next-step-desc">We'll send travel tips, weather updates, and local coastal recommendations 2 days before check-in.</p>
+        </div>
+
+        <div class="next-step-box">
+          <div class="next-step-num">3</div>
+          <div class="next-step-title">At Check-in</div>
+          <p class="next-step-desc">Show your booking reference <strong>KT-BK-890214</strong> or digital voucher on your phone.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Important Booking Information -->
+    <section class="confirmation-card-box">
+      <div class="card-section-title">
+        <span>Important Information</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
+        <div style="background:#F8FCFC; padding:12px 14px; border-radius:10px; border:1px solid var(--color-border-subtle);">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">Cancellation Policy</span>
+          <p style="font-size:0.86rem; color:var(--color-text-primary); margin-top:2px;" id="infoCancellation">
+            Free cancellation until 22 Aug 2026 with 100% full refund guarantee.
+          </p>
+        </div>
+
+        <div style="background:#F8FCFC; padding:12px 14px; border-radius:10px; border:1px solid var(--color-border-subtle);">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">Check-In / Out</span>
+          <p style="font-size:0.86rem; color:var(--color-text-primary); margin-top:2px;">
+            Check-in: <strong id="infoCheckIn">1:00 PM onwards</strong><br />
+            Check-out: <strong id="infoCheckOut">By 11:00 AM</strong>
+          </p>
+        </div>
+
+        <div style="background:#F8FCFC; padding:12px 14px; border-radius:10px; border:1px solid var(--color-border-subtle);">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">Property Contact</span>
+          <p style="font-size:0.86rem; color:var(--color-text-primary); margin-top:2px;">
+            Host: <strong id="infoHostPhone">+91 98201 45890</strong><br />
+            Support: <strong>support@konkantrip.com</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Primary Actions Stack -->
+    <div class="confirmation-actions-stack">
+      <button type="button" class="primary-view-booking-cta" id="viewBookingBtn">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+        <span>View My Booking</span>
+      </button>
+
+      <button type="button" class="secondary-action-btn" id="downloadVoucherBtn">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Download Confirmation Voucher</span>
+      </button>
+
+      <button type="button" class="secondary-action-btn" id="homeBtn">
+        <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span>Go to Homepage</span>
+      </button>
+    </div>
+
+    <!-- 10. Recommended / Explore Section (Backend-Driven) -->
+    <section class="confirmation-card-box" id="recommendationsSection" style="display:none;">
+      <div class="card-section-title">
+        <span>More to explore around Konkan</span>
+      </div>
+      <div class="recommendations-grid" id="recommendationsGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Modals
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- 1. View My Booking Digital Voucher Modal -->
+  <div class="modal-container" id="myBookingModal" role="dialog" aria-modal="true" style="max-width: 520px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Digital Stay Voucher</h3>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="myBookingModalBody">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- 2. Status Pending Modal -->
+  <div class="modal-container" id="statusPendingModal" role="dialog" aria-modal="true" style="max-width: 480px;">
+    <div class="modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg class="icon-inline" style="color:var(--color-konkan-sun);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <h3 class="modal-title">Reservation Processing</h3>
+      </div>
+      <button class="modal-close-btn" data-action="close-modal" aria-label="Close modal">
+        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.95rem; color:var(--color-text-secondary); margin-bottom:16px;" id="statusPendingMessage">
+        We are securely confirming your reservation with the host. Please do not make another payment.
+      </p>
+      <button class="btn btn-primary" data-action="close-modal" style="width:100%;">
+        <span>Check Status Again</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- =========================================================================
+       Dev State Switcher Toolbar (Demonstrates Confirmed, Confirming, Pending, Already Confirmed, Error)
+       ========================================================================= -->
+  <aside class="dev-state-bar" aria-label="Backend UI State Simulation Bar">
+    <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
+    <button class="dev-state-btn active" data-mode="CONFIRMED" title="Normal confirmed booking">Confirmed</button>
+    <button class="dev-state-btn" data-mode="CONFIRMING" title="Simulate booking confirming">Confirming</button>
+    <button class="dev-state-btn" data-mode="PAYMENT_RECEIVED_PENDING" title="Simulate payment received pending">Pending Finalization</button>
+    <button class="dev-state-btn" data-mode="ALREADY_CONFIRMED" title="Simulate refreshed already confirmed">Already Confirmed</button>
+    <button class="dev-state-btn" data-mode="ERROR" title="Simulate confirmation error">Error State</button>
+  </aside>
+
+  <!-- =========================================================================
+       Standard Customer Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <div class="logo-symbol" style="width:34px; height:34px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+              </svg>
+            </div>
+            <span>KonkanTrip</span>
+          </div>
+          <p class="footer-brand-text">
+            India's dedicated coastal travel platform connecting travelers with verified beachfront stays, heritage wadas, and authentic local experiences across the Konkan belt.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Destinations</h4>
+          <ul class="footer-links-list">
+            <li><a href="results.html?dest=Dapoli" class="footer-link">Dapoli & Murud</a></li>
+            <li><a href="results.html?dest=Tarkarli" class="footer-link">Tarkarli & Devbagh</a></li>
+            <li><a href="results.html?dest=Ganpatipule" class="footer-link">Ganpatipule Beach</a></li>
+            <li><a href="results.html?dest=Malvan" class="footer-link">Malvan & Sindhudurg</a></li>
+            <li><a href="results.html?dest=Alibaug" class="footer-link">Alibaug & Kihim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Stay Types</h4>
+          <ul class="footer-links-list">
+            <li><a href="results.html?type=villas" class="footer-link">Beachfront Villas</a></li>
+            <li><a href="results.html?type=wada" class="footer-link">Heritage Wada Homestays</a></li>
+            <li><a href="results.html?type=cliffside" class="footer-link">Cliffside Ocean Resorts</a></li>
+            <li><a href="results.html?type=eco" class="footer-link">Eco Bamboo Cottages</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" class="footer-link">About KonkanTrip</a></li>
+            <li><a href="#" class="footer-link">Host with Us</a></li>
+            <li><a href="#" class="footer-link">Safety Guidelines</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 KonkanTrip Hospitality Pvt. Ltd. All rights reserved. Made for the love of the Konkan coast.</div>
+        <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/confirmation.js"></script>
+</body>
+</html>
