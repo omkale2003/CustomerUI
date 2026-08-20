@@ -1,0 +1,13 @@
+{
+  "name": "konkantrip-customer-ui",
+  "version": "1.0.0",
+  "description": "KonkanTrip — Authentic Coastal Stays & Experiences Web App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["travel", "booking", "ui", "konkan"],
+  "author": "",
+  "license": "ISC"
+}
