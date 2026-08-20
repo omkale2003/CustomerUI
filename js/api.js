@@ -496,6 +496,14 @@ class KonkanApiService {
       );
     }
 
+    // 5b. Pet Friendly Filter
+    if (criteria.pets) {
+      results = results.filter(stay => 
+        (stay.houseRules?.pets && !stay.houseRules.pets.toLowerCase().includes('not allowed') && !stay.houseRules.pets.toLowerCase().includes('no pets')) ||
+        (stay.amenities && stay.amenities.some(a => a.toLowerCase().includes('pet')))
+      );
+    }
+
     // 6. Micro-location / Beach Filter
     if (criteria.microLocations && criteria.microLocations.length > 0) {
       results = results.filter(stay => 

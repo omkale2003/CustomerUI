@@ -438,7 +438,7 @@
 
 .booking-actions-sidebar {
   position: sticky;
-  top: 90px;
+  top: calc(var(--header-height, 64px) + 20px);
 }
 
 .sidebar-summary-card {

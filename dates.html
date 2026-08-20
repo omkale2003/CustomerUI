@@ -55,14 +55,6 @@
         <span>Konkan<span class="logo-text-accent">Trip</span></span>
       </a>
 
-      <!-- Desktop Navigation Links — "Stays" Highlighted as Active -->
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="index.html#featuredStaysSection" class="nav-link active">Stays</a>
-        <a href="index.html#experiencesSection" class="nav-link">Experiences</a>
-        <a href="search.html" class="nav-link">Destinations</a>
-        <a href="index.html#seasonalSection" class="nav-link">Offers</a>
-      </nav>
-
       <!-- Header Action Items -->
       <div class="header-actions">
         <button class="header-action-btn" title="Currency & Region" style="font-size: 0.85rem; font-weight: 600;">
@@ -111,7 +103,7 @@
           </a>
           <div class="screen-indicator-badge">
             <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <span>Screen 03 · Date & Guest Selection</span>
+            <span>Date & Guest Selection</span>
           </div>
         </div>
 
@@ -138,7 +130,7 @@
         <!-- Heading Block -->
         <div class="dates-heading-block">
           <h1 class="dates-main-title">Plan your stay</h1>
-          <p class="dates-supporting-text">Choose your dates and who's travelling.</p>
+          <p class="dates-supporting-text">Choose your dates and number of guests.</p>
         </div>
 
         <!-- State Feedback Container (No Availability / API Error) -->
@@ -217,7 +209,7 @@
                 <div class="counter-row">
                   <div>
                     <div class="counter-info-title">Rooms</div>
-                    <div class="counter-info-sub">Number of stays</div>
+                    <div class="counter-info-sub">Number of rooms</div>
                   </div>
                   <div class="counter-controls">
                     <button class="counter-btn" data-guest-action="dec" data-guest-target="rooms" aria-label="Decrease Rooms">-</button>
@@ -256,6 +248,18 @@
                 <div class="child-age-notice" id="childAgeContainer" style="display: none;">
                   <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                   <span>Child guest ages will be gathered during property checkout per host pricing rules.</span>
+                </div>
+
+                <!-- Pet Friendly Toggle -->
+                <div class="toggle-row">
+                  <div>
+                    <div class="counter-info-title">🐾 Pet Friendly</div>
+                    <div class="counter-info-sub">Traveling with pets</div>
+                  </div>
+                  <label class="switch-toggle" for="datesPetsToggle">
+                    <input type="checkbox" id="datesPetsToggle" aria-label="Toggle Pet Friendly Stays" />
+                    <span class="switch-slider"></span>
+                  </label>
                 </div>
 
                 <div style="margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-subtle); text-align: right;">
@@ -450,7 +454,6 @@
         <div style="display: flex; gap: 18px; flex-wrap: wrap;">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cancellation Policy</a>
           <a href="#" class="footer-link">Sitemap</a>
         </div>
       </div>

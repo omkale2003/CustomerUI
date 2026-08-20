@@ -434,9 +434,9 @@ class KonkanBookingController {
         localStorage.setItem('konkan_trip_active_booking_draft_v1', JSON.stringify(response));
       } catch (e) {}
 
-      this.showToast('Details verified! Advancing to Screen 07 Review Booking...');
+      this.showToast('Details verified! Advancing to Review Booking...');
 
-      // Proceed to Screen 07 (Review Booking)
+      // Proceed to Review Booking
       setTimeout(() => {
         window.location.href = `review.html?bookingId=${encodeURIComponent(response.bookingId)}&propertyId=${encodeURIComponent(payload.propertyId)}&roomId=${encodeURIComponent(payload.roomId)}`;
       }, 480);

@@ -23,7 +23,8 @@ class KonkanResultsController {
       propertyTypes: [],
       minRating: null,
       amenities: [],
-      microLocations: []
+      microLocations: [],
+      pets: false
     };
 
     this.currentResults = [];
@@ -109,6 +110,7 @@ class KonkanResultsController {
     if (rooms) this.searchCriteria.rooms = parseInt(rooms, 10);
     if (nights) this.searchCriteria.nights = parseInt(nights, 10);
     if (sort) this.searchCriteria.sort = sort;
+    if (params.get('pets') === 'true') this.searchCriteria.pets = true;
 
     // Fallback default dates if not provided
     if (!this.searchCriteria.checkIn) {
@@ -135,7 +137,8 @@ class KonkanResultsController {
     if (this.dom.summaryGuests) {
       const totalGuests = this.searchCriteria.adults + this.searchCriteria.children;
       const roomText = `${this.searchCriteria.rooms} Room${this.searchCriteria.rooms > 1 ? 's' : ''}`;
-      this.dom.summaryGuests.textContent = `${totalGuests} Guests · ${roomText}`;
+      const petText = this.searchCriteria.pets ? ' · 🐾 Pets' : '';
+      this.dom.summaryGuests.textContent = `${totalGuests} Guests · ${roomText}${petText}`;
     }
 
     if (this.dom.sortSelect) {
@@ -568,6 +571,18 @@ class KonkanResultsController {
       });
     });
 
+    // Pet Friendly
+    if (this.searchCriteria.pets) {
+      chips.push({
+        label: '🐾 Pet Friendly',
+        onRemove: () => {
+          this.searchCriteria.pets = false;
+          this.updateSearchSummaryBar();
+          this.fetchAndRenderResults();
+        }
+      });
+    }
+
     if (chips.length === 0) {
       this.dom.activeChipsRow.innerHTML = '';
       return;
@@ -594,7 +609,9 @@ class KonkanResultsController {
     this.searchCriteria.minRating = null;
     this.searchCriteria.amenities = [];
     this.searchCriteria.microLocations = [];
+    this.searchCriteria.pets = false;
     this.searchCriteria.page = 1;
+    this.updateSearchSummaryBar();
     this.fetchAndRenderResults();
     this.showToast('Cleared all active filters.');
   }

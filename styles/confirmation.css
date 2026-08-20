@@ -21,7 +21,7 @@
 .confirmation-header {
   background-color: var(--color-white);
   border-bottom: 1px solid var(--color-border-subtle);
-  padding: 14px 0;
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
@@ -58,7 +58,7 @@
 .confirmation-stage-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: var(--space-xl) 20px var(--space-4xl);
+  padding: var(--space-md) 20px var(--space-2xl);
   width: 100%;
 }
 

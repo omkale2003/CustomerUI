@@ -244,7 +244,7 @@
 
 .payment-summary-sidebar {
   position: sticky;
-  top: 80px;
+  top: calc(var(--header-height, 64px) + 16px);
 }
 
 .payment-cta-button {

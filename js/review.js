@@ -355,7 +355,7 @@ class KonkanReviewController {
         return;
       }
 
-      this.showToast('Verified! Proceeding to Screen 08 — Payment...');
+      this.showToast('Verified! Proceeding to Payment...');
 
       setTimeout(() => {
         window.location.href = `payment.html?orderId=${encodeURIComponent(lockResult.orderId)}&sessionId=${encodeURIComponent(this.sessionId)}&amount=${lockResult.amount}`;

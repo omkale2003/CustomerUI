@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KonkanTrip — Property Details | Coastal Stay Discovery</title>
-  <meta name="description" content="Inspect rooms, transparent pricing, verified reviews, house rules, and amenities for verified Konkan beachfront villas and eco resorts." />
-  
+  <meta name="description"
+    content="Inspect rooms, transparent pricing, verified reviews, house rules, and amenities for verified Konkan beachfront villas and eco resorts." />
+
   <!-- OpenGraph Meta -->
   <meta property="og:title" content="KonkanTrip — Verified Property Details" />
-  <meta property="og:description" content="Discover handpicked coastal stays with transparent room rates, infinity pools, and authentic Malvani dining." />
+  <meta property="og:description"
+    content="Discover handpicked coastal stays with transparent room rates, infinity pools, and authentic Malvani dining." />
   <meta property="og:type" content="website" />
-  
+
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/variables.css" />
@@ -23,6 +28,7 @@
   <link rel="stylesheet" href="styles/property.css" />
   <link rel="stylesheet" href="styles/responsive.css" />
 </head>
+
 <body class="property-page-body">
 
   <!-- =========================================================================
@@ -33,7 +39,8 @@
       <!-- Brand Logo -->
       <a href="index.html" class="brand-logo" aria-label="KonkanTrip Home">
         <div class="logo-symbol">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
             <path d="M3 13c1.5-3 5-7 9-7 4 0 7 4 9 7"></path>
             <circle cx="12" cy="7" r="2.5" fill="#F2A93B" stroke="none"></circle>
@@ -41,14 +48,6 @@
         </div>
         <span>Konkan<span class="logo-text-accent">Trip</span></span>
       </a>
-
-      <!-- Desktop Navigation Links — "Stays" Active -->
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="results.html" class="nav-link active">Stays</a>
-        <a href="index.html#experiencesSection" class="nav-link">Experiences</a>
-        <a href="search.html" class="nav-link">Destinations</a>
-        <a href="index.html#seasonalSection" class="nav-link">Offers</a>
-      </nav>
 
       <!-- Header Action Items -->
       <div class="header-actions">
@@ -58,14 +57,23 @@
 
         <!-- Wishlist Shortcut -->
         <button class="header-action-btn" data-action="open-wishlist" aria-label="View Saved Wishlist">
-          <svg class="icon-inline" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <svg class="icon-inline" viewBox="0 0 24 24">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
           <span class="action-count-badge wishlist-count-badge">2</span>
           <span>Wishlist</span>
         </button>
 
         <!-- My Trips Shortcut -->
         <button class="header-action-btn" data-action="open-trips" aria-label="View My Booked Trips">
-          <svg class="icon-inline" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <svg class="icon-inline" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
           <span>My Trips</span>
         </button>
 
@@ -77,7 +85,11 @@
 
         <!-- Mobile Hamburger Trigger -->
         <button class="hamburger-btn" data-action="toggle-mobile-menu" aria-label="Toggle navigation menu">
-          <svg class="icon-inline" style="width:24px; height:24px;" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="icon-inline" style="width:24px; height:24px;" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
@@ -88,21 +100,34 @@
        ========================================================================= -->
   <main class="property-main-section" style="padding-bottom: var(--space-4xl);">
     <div class="container">
-      
+
       <!-- Top Navigation & Actions Bar -->
       <nav class="property-top-nav" aria-label="Back Navigation">
         <a href="results.html?dest=Dapoli" class="back-to-results-btn" id="backToResultsBtn">
-          <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
           <span>Back to Dapoli stays</span>
         </a>
 
         <div class="property-top-actions">
           <button class="action-pill-btn" id="savePropertyBtn">
-            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
             <span>Save</span>
           </button>
           <button class="action-pill-btn" id="sharePropertyBtn">
-            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
             <span>Share</span>
           </button>
         </div>
@@ -137,11 +162,15 @@
              LEFT COLUMN: Content, Amenities, Rooms, Reviews, Rules
              =================================================================== -->
         <div class="property-content-column">
-          
+
           <!-- 1. Highlights: Why guests like this stay -->
           <section class="property-section-card">
             <h2 class="section-headline">
-              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="icon-inline icon-sm" style="color:var(--color-primary);" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
               <span>Why guests like this stay</span>
             </h2>
             <div class="highlights-chips-grid" id="highlightsContainer"></div>
@@ -163,11 +192,15 @@
             <h2 class="section-headline">Where you'll stay</h2>
             <div class="styled-map-card">
               <div class="map-pin-indicator">
-                <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 <span>Cliffside Ocean Song Eco Resort</span>
               </div>
             </div>
-            <h3 style="font-size:0.95rem; font-weight:700; color:var(--color-text-primary); margin-bottom:8px;">Nearby Beaches & Local Attractions</h3>
+            <h3 style="font-size:0.95rem; font-weight:700; color:var(--color-text-primary); margin-bottom:8px;">Nearby
+              Beaches & Local Attractions</h3>
             <div class="nearby-places-grid" id="nearbyPlacesList"></div>
           </section>
 
@@ -175,7 +208,8 @@
           <section class="property-section-card" id="roomsSection">
             <div style="margin-bottom: var(--space-lg);">
               <h2 class="section-headline" style="margin-bottom: 2px;">Choose your room</h2>
-              <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Select a room that works for your stay.</p>
+              <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Select a room that works for your stay.
+              </p>
             </div>
             <div class="room-cards-stack" id="roomCardsStack"></div>
           </section>
@@ -189,19 +223,22 @@
           <!-- 6. Cancellation Policy -->
           <section class="property-section-card">
             <h2 class="section-headline">Cancellation policy</h2>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: var(--space-md);" id="cancellationSnippet"></p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: var(--space-md);"
+              id="cancellationSnippet"></p>
             <button class="read-more-toggle-btn" id="viewFullCancellationBtn">View full cancellation policy →</button>
           </section>
 
           <!-- 7. What guests say (Reviews) -->
           <section class="property-section-card">
             <h2 class="section-headline">What guests say</h2>
-            
+
             <div class="reviews-score-banner">
               <div class="score-badge-huge" id="reviewsScoreBig">4.95 ★</div>
               <div>
-                <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">Exceptional Guest Experience</div>
-                <div style="font-size: 0.85rem; color: var(--color-text-secondary);">Based on verified KonkanTrip customer bookings</div>
+                <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">Exceptional Guest
+                  Experience</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-secondary);">Based on verified KonkanTrip
+                  customer bookings</div>
               </div>
             </div>
 
@@ -228,20 +265,30 @@
 
           <div class="selected-room-mini-card">
             <div class="summary-icon-bubble">
-              <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
             </div>
             <div>
-              <div style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">Selected Room</div>
-              <div style="font-size:0.95rem; font-weight:700; color:var(--color-text-primary);" id="stickyRoomTitle">Panoramic Ocean Suite</div>
+              <div
+                style="font-size:0.75rem; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">
+                Selected Room</div>
+              <div style="font-size:0.95rem; font-weight:700; color:var(--color-text-primary);" id="stickyRoomTitle">
+                Panoramic Ocean Suite</div>
             </div>
           </div>
 
-          <div style="display:flex; justify-content:space-between; font-size:0.88rem; padding: 6px 0; color:var(--color-text-secondary); border-bottom:1px solid var(--color-border-subtle);">
+          <div
+            style="display:flex; justify-content:space-between; font-size:0.88rem; padding: 6px 0; color:var(--color-text-secondary); border-bottom:1px solid var(--color-border-subtle);">
             <span>Dates</span>
-            <span style="font-weight:700; color:var(--color-text-primary);" id="stickyDates">24 Aug – 26 Aug (2 nights)</span>
+            <span style="font-weight:700; color:var(--color-text-primary);" id="stickyDates">24 Aug – 26 Aug (2
+              nights)</span>
           </div>
 
-          <div style="display:flex; justify-content:space-between; font-size:0.88rem; padding: 6px 0; color:var(--color-text-secondary); margin-bottom: var(--space-md);">
+          <div
+            style="display:flex; justify-content:space-between; font-size:0.88rem; padding: 6px 0; color:var(--color-text-secondary); margin-bottom: var(--space-md);">
             <span>Guests</span>
             <span style="font-weight:700; color:var(--color-text-primary);" id="stickyGuests">2 Guests · 1 Room</span>
           </div>
@@ -268,7 +315,10 @@
 
           <button class="continue-booking-cta" id="continueBookingBtn">
             <span>Continue to Booking</span>
-            <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
 
           <div style="text-align:center; font-size:0.78rem; color:var(--color-text-secondary); margin-top:10px;">
@@ -287,38 +337,59 @@
   <div class="mobile-sticky-booking-bar">
     <div>
       <span style="font-size:0.75rem; color:var(--color-text-secondary); display:block;">Total price</span>
-      <span style="font-size:1.15rem; font-weight:800; color:var(--color-primary);" id="mobileStickyPrice">₹14,515 total (2 nights)</span>
+      <span style="font-size:1.15rem; font-weight:800; color:var(--color-primary);" id="mobileStickyPrice">₹14,515 total
+        (2 nights)</span>
     </div>
     <button class="btn btn-primary" id="mobileContinueBtn" style="padding: 10px 18px;">
       <span>Continue</span>
-      <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      <svg class="icon-inline icon-sm" viewBox="0 0 24 24">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
     </button>
   </div>
 
   <!-- =========================================================================
        Full-Screen Photography Gallery Modal
        ========================================================================= -->
-  <div class="modal-container" id="fullGalleryModal" role="dialog" aria-modal="true" style="max-width: 960px; padding: 0; background: #000; color: #fff;">
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 20px; background:rgba(0,0,0,0.85);">
+  <div class="modal-container" id="fullGalleryModal" role="dialog" aria-modal="true"
+    style="max-width: 960px; padding: 0; background: #000; color: #fff;">
+    <div
+      style="display:flex; justify-content:space-between; align-items:center; padding:14px 20px; background:rgba(0,0,0,0.85);">
       <span id="galleryCounterText" style="font-size:0.95rem; font-weight:700;">Photo 1 of 5</span>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close gallery" style="color:#fff;">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
 
-    <div style="position:relative; display:flex; justify-content:center; align-items:center; min-height:480px; padding:10px;">
-      <button id="galleryPrevBtn" style="position:absolute; left:16px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.2); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;" aria-label="Previous Photo">
-        <svg class="icon-inline" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    <div
+      style="position:relative; display:flex; justify-content:center; align-items:center; min-height:480px; padding:10px;">
+      <button id="galleryPrevBtn"
+        style="position:absolute; left:16px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.2); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;"
+        aria-label="Previous Photo">
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
       </button>
 
-      <img id="galleryLargeImg" src="" alt="Property Photo Full" style="max-width:100%; max-height:560px; object-fit:contain; border-radius:8px;" />
+      <img id="galleryLargeImg" src="" alt="Property Photo Full"
+        style="max-width:100%; max-height:560px; object-fit:contain; border-radius:8px;" />
 
-      <button id="galleryNextBtn" style="position:absolute; right:16px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.2); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;" aria-label="Next Photo">
-        <svg class="icon-inline" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <button id="galleryNextBtn"
+        style="position:absolute; right:16px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.2); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;"
+        aria-label="Next Photo">
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
       </button>
     </div>
 
-    <div id="galleryThumbTrack" style="display:flex; justify-content:center; gap:8px; padding:12px; background:rgba(0,0,0,0.85); overflow-x:auto;"></div>
+    <div id="galleryThumbTrack"
+      style="display:flex; justify-content:center; gap:8px; padding:12px; background:rgba(0,0,0,0.85); overflow-x:auto;">
+    </div>
   </div>
 
   <!-- =========================================================================
@@ -328,7 +399,10 @@
     <div class="modal-header">
       <h3 class="modal-title">Property Amenities</h3>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close amenities">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div class="modal-body" id="allAmenitiesList">
@@ -343,7 +417,10 @@
     <div class="modal-header">
       <h3 class="modal-title">Full Cancellation Policy</h3>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close policy">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div class="modal-body" id="cancellationModalBody">
@@ -360,11 +437,18 @@
   <div class="drawer-container" id="wishlistDrawer" role="dialog" aria-modal="true">
     <div class="drawer-header">
       <div style="display: flex; align-items: center; gap: 8px;">
-        <svg class="icon-inline" style="color: var(--color-error);" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <svg class="icon-inline" style="color: var(--color-error);" viewBox="0 0 24 24">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+          </path>
+        </svg>
         <h3 class="modal-title">Your Saved Stays</h3>
       </div>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close wishlist">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div class="drawer-body" id="wishlistDrawerBody">
@@ -376,11 +460,18 @@
   <div class="drawer-container" id="tripsDrawer" role="dialog" aria-modal="true">
     <div class="drawer-header">
       <div style="display: flex; align-items: center; gap: 8px;">
-        <svg class="icon-inline" style="color: var(--color-primary);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+        <svg class="icon-inline" style="color: var(--color-primary);" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+        </svg>
         <h3 class="modal-title">My Booked Trips</h3>
       </div>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close trips">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div class="drawer-body" id="tripsDrawerBody">
@@ -393,19 +484,29 @@
     <div class="modal-header">
       <h3 class="modal-title">Welcome to KonkanTrip</h3>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close login">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div class="modal-body">
       <p style="font-size: 0.925rem; color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
         Sign in to save your favorite stays and manage your coastal bookings.
       </p>
-      <form onsubmit="event.preventDefault(); window.konkanProp.showToast('Welcome back! Signed in.'); window.konkanProp.closeAllModals();" style="display: flex; flex-direction: column; gap: var(--space-md);">
+      <form
+        onsubmit="event.preventDefault(); window.konkanProp.showToast('Welcome back! Signed in.'); window.konkanProp.closeAllModals();"
+        style="display: flex; flex-direction: column; gap: var(--space-md);">
         <div>
-          <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-secondary); display: block; margin-bottom: 6px;">Mobile Number</label>
+          <label
+            style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-secondary); display: block; margin-bottom: 6px;">Mobile
+            Number</label>
           <div style="display: flex; gap: 8px;">
-            <div style="padding: 10px 12px; background: var(--color-bg-subtle); border-radius: var(--radius-md); font-weight: 600; font-size: 0.95rem; border: 1px solid var(--color-border-subtle);">+91</div>
-            <input type="tel" placeholder="Enter 10-digit mobile number" value="9820194820" required style="width: 100%; padding: 10px 14px;" />
+            <div
+              style="padding: 10px 12px; background: var(--color-bg-subtle); border-radius: var(--radius-md); font-weight: 600; font-size: 0.95rem; border: 1px solid var(--color-border-subtle);">
+              +91</div>
+            <input type="tel" placeholder="Enter 10-digit mobile number" value="9820194820" required
+              style="width: 100%; padding: 10px 14px;" />
           </div>
         </div>
         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
@@ -420,26 +521,38 @@
     <div class="mobile-menu-header">
       <div class="brand-logo" style="font-size: 1.25rem;">
         <div class="logo-symbol" style="width: 32px; height: 32px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+          </svg>
         </div>
         <span>KonkanTrip</span>
       </div>
       <button class="modal-close-btn" data-action="close-modal" aria-label="Close menu">
-        <svg class="icon-inline" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
 
     <div class="mobile-nav-list">
       <a href="index.html" class="mobile-nav-link">
-        <svg class="icon-inline" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
         <span>KonkanTrip Home</span>
       </a>
       <a href="search.html" class="mobile-nav-link">
-        <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
         <span>Destinations Search</span>
       </a>
       <a href="results.html" class="mobile-nav-link active">
-        <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <svg class="icon-inline" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
         <span>Stays Discovery</span>
       </a>
     </div>
@@ -461,7 +574,8 @@
     <span style="opacity: 0.75; font-weight: 600;">UI State:</span>
     <button class="dev-state-btn active" data-mode="SUCCESS" title="Normal loaded state">Success</button>
     <button class="dev-state-btn" data-mode="LOADING" title="Skeleton loader state">Loading Skeletons</button>
-    <button class="dev-state-btn" data-mode="UNAVAILABLE" title="Property unavailable state">Property Unavailable</button>
+    <button class="dev-state-btn" data-mode="UNAVAILABLE" title="Property unavailable state">Property
+      Unavailable</button>
     <button class="dev-state-btn" data-mode="ERROR" title="Error state with retry button">Error State</button>
   </aside>
 
@@ -471,7 +585,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top-grid">
-        
+
         <div class="footer-brand-col">
           <div class="footer-logo">
             <div class="logo-symbol" style="width:34px; height:34px;">
@@ -482,7 +596,8 @@
             <span>KonkanTrip</span>
           </div>
           <p class="footer-brand-text">
-            India's dedicated coastal travel platform connecting travelers with verified beachfront stays, heritage wadas, and authentic local experiences across the Konkan belt.
+            India's dedicated coastal travel platform connecting travelers with verified beachfront stays, heritage
+            wadas, and authentic local experiences across the Konkan belt.
           </p>
         </div>
 
@@ -523,7 +638,7 @@
         <div style="display: flex; gap: 18px; flex-wrap: wrap;">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cancellation Policy</a>
+          <a href="#" class="footer-link">Sitemap</a>
         </div>
       </div>
     </div>
@@ -535,4 +650,5 @@
   <script src="js/components.js"></script>
   <script src="js/property.js"></script>
 </body>
+
 </html>

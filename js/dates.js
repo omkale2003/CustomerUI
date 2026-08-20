@@ -26,7 +26,8 @@ class KonkanDatesController {
     this.guestState = {
       rooms: 1,
       adults: 2,
-      children: 0
+      children: 0,
+      pets: false
     };
 
     this.calendarMonthOffset = 0; // 0 = current month, 1 = next month, etc.
@@ -68,6 +69,7 @@ class KonkanDatesController {
     this.dom.childrenVal = document.getElementById('childrenCount');
     this.dom.roomsVal = document.getElementById('roomsCount');
     this.dom.childAgeContainer = document.getElementById('childAgeContainer');
+    this.dom.datesPetsToggle = document.getElementById('datesPetsToggle');
     this.dom.guestDoneBtn = document.getElementById('guestDoneBtn');
 
     // Stay Live Summary Card
@@ -123,6 +125,10 @@ class KonkanDatesController {
     if (adults) this.guestState.adults = parseInt(adults, 10);
     if (children) this.guestState.children = parseInt(children, 10);
     if (rooms) this.guestState.rooms = parseInt(rooms, 10);
+    if (params.get('pets') === 'true') {
+      this.guestState.pets = true;
+      if (this.dom.datesPetsToggle) this.dom.datesPetsToggle.checked = true;
+    }
   }
 
   initDefaultDates() {
@@ -177,7 +183,7 @@ class KonkanDatesController {
       this.closeGuestPopover();
     });
 
-    // Guest Counter Steppers
+    // Guest counter buttons
     document.querySelectorAll('[data-guest-action]').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -185,6 +191,12 @@ class KonkanDatesController {
         const target = btn.getAttribute('data-guest-target');
         this.handleGuestCounter(target, action);
       });
+    });
+
+    // Pet Friendly toggle
+    this.dom.datesPetsToggle?.addEventListener('change', (e) => {
+      this.guestState.pets = e.target.checked;
+      this.updateStaySummary();
     });
 
     // Close guest popover on outside click
@@ -520,7 +532,8 @@ class KonkanDatesController {
     // Guests string
     const childText = this.guestState.children > 0 ? `, ${this.guestState.children} Child${this.guestState.children > 1 ? 'ren' : ''}` : '';
     const roomText = `${this.guestState.rooms} Room${this.guestState.rooms > 1 ? 's' : ''}`;
-    const guestString = `${this.guestState.adults} Adults${childText} · ${roomText}`;
+    const petText = this.guestState.pets ? ' · 🐾 Pets' : '';
+    const guestString = `${this.guestState.adults} Adults${childText} · ${roomText}${petText}`;
 
     if (this.dom.summaryGuestsText) {
       this.dom.summaryGuestsText.textContent = guestString;
@@ -588,7 +601,7 @@ class KonkanDatesController {
 
     // Seamless navigation to Screen 04 (Search Results Discovery)
     setTimeout(() => {
-      window.location.href = `results.html?dest=${destParam}&checkIn=${checkInStr}&checkOut=${checkOutStr}&adults=${adults}&children=${children}&rooms=${rooms}&nights=${nights}`;
+      window.location.href = `results.html?dest=${destParam}&checkIn=${checkInStr}&checkOut=${checkOutStr}&adults=${adults}&children=${children}&rooms=${rooms}&nights=${nights}${this.guestState.pets ? '&pets=true' : ''}`;
     }, 450);
   }
 

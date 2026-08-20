@@ -20,7 +20,8 @@ class KonkanSearchController {
       checkOut: '',
       adults: 2,
       children: 0,
-      rooms: 1
+      rooms: 1,
+      pets: false
     };
 
     this.dom = {};
@@ -70,6 +71,7 @@ class KonkanSearchController {
     this.dom.screen03Adults = document.getElementById('screen03Adults');
     this.dom.screen03Children = document.getElementById('screen03Children');
     this.dom.screen03Rooms = document.getElementById('screen03Rooms');
+    this.dom.screen03PetsToggle = document.getElementById('screen03PetsToggle');
     this.dom.screen03SubmitBtn = document.getElementById('screen03SubmitBtn');
 
     // Drawers & Modals
@@ -130,6 +132,11 @@ class KonkanSearchController {
         const target = btn.getAttribute('data-screen03-target');
         this.handleScreen03Counter(target, action);
       });
+    });
+
+    // Screen 03 Pets Toggle
+    this.dom.screen03PetsToggle?.addEventListener('change', (e) => {
+      this.screen03State.pets = e.target.checked;
     });
 
     // Screen 03 CTA click
@@ -515,7 +522,7 @@ class KonkanSearchController {
     // Save to active destination storage for Screen 03
     apiService.setSelectedDestination({ name: destName, district: 'Maharashtra Coast' });
 
-    this.showToast(`Selected ${destName} · Opening Screen 03 Date & Guest Selection...`);
+    this.showToast(`Selected ${destName} · Opening Date & Guest Selection...`);
 
     // Smooth direct navigation to Screen 03 (dates.html)
     setTimeout(() => {
@@ -718,7 +725,7 @@ class KonkanSearchController {
 
     // In full multi-screen flow, navigate back to index.html with query filters or Screen 04
     setTimeout(() => {
-      window.location.href = `index.html?dest=${encodeURIComponent(dest)}&checkIn=${checkIn}&checkOut=${checkOut}&guests=${totalGuests}&rooms=${rooms}#featuredStaysSection`;
+      window.location.href = `results.html?dest=${encodeURIComponent(dest)}&checkIn=${checkIn}&checkOut=${checkOut}&adults=${this.screen03State.adults}&children=${this.screen03State.children}&rooms=${rooms}${this.screen03State.pets ? '&pets=true' : ''}`;
     }, 450);
   }
 

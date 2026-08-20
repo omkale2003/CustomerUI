@@ -76,7 +76,7 @@
   
   /* Layout Constraints */
   --container-max-width: 1360px;
-  --header-height: 80px;
+  --header-height: 64px;
   --z-sticky: 100;
   --z-popover: 200;
   --z-modal-backdrop: 500;

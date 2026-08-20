@@ -24,46 +24,51 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 /* Brand Logo */
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   text-decoration: none;
   color: var(--color-text-primary);
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   letter-spacing: -0.03em;
 }
 
 .logo-symbol {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-ocean-deep) 100%);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-white);
-  box-shadow: 0 4px 10px rgba(8, 126, 139, 0.25);
+  box-shadow: 0 3px 8px rgba(8, 126, 139, 0.22);
   position: relative;
   overflow: hidden;
+}
+
+.logo-symbol svg {
+  width: 18px;
+  height: 18px;
 }
 
 .logo-symbol::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 14px;
-  height: 14px;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
   background-color: var(--color-konkan-sun);
   border-radius: var(--radius-full);
-  border: 2px solid var(--color-white);
+  border: 1.5px solid var(--color-white);
 }
 
 .logo-text-accent {
@@ -75,15 +80,15 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .nav-link {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-text-primary);
-  padding: 6px 0;
+  padding: 4px 0;
   position: relative;
   transition: color var(--transition-fast);
 }
@@ -95,7 +100,7 @@
 .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -107,17 +112,17 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .header-action-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: var(--radius-md);
   color: var(--color-text-primary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   position: relative;
   background: transparent;
@@ -131,31 +136,32 @@
 
 .action-count-badge {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 0px;
+  right: 0px;
   background-color: var(--color-konkan-sun);
   color: #382400;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  min-width: 18px;
-  height: 18px;
+  min-width: 16px;
+  height: 16px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .user-profile-pill {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: 6px 14px 6px 8px;
+  padding: 4px 10px 4px 5px;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-full);
   background-color: var(--color-white);
   transition: all var(--transition-fast);
+  font-size: 0.85rem;
 }
 
 .user-profile-pill:hover {
@@ -164,8 +170,8 @@
 }
 
 .user-avatar-circle {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: var(--radius-full);
   background-color: #E5F6F8;
   color: var(--color-primary);
@@ -173,7 +179,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .hamburger-btn {
@@ -190,8 +196,8 @@
 
 .hero-section {
   position: relative;
-  min-height: 580px;
-  padding: var(--space-4xl) 0 var(--space-4xl);
+  min-height: 500px;
+  padding: var(--space-2xl) 0 var(--space-2xl);
   display: flex;
   align-items: center;
   background-color: #075E68;
@@ -240,6 +246,9 @@
   text-align: center;
   max-width: 980px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-badge-pill {
@@ -262,6 +271,107 @@
 
 .hero-badge-sun {
   color: var(--color-konkan-sun);
+}
+
+/* ==========================================================================
+   MakeMyTrip Style Hero Service Navigation Tabs
+   ========================================================================== */
+
+.mmt-hero-tabs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  padding: 6px 10px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 0 0 var(--space-lg) 0;
+  gap: 6px;
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.mmt-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px 6px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  position: relative;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  min-width: 82px;
+}
+
+.mmt-tab-item:hover {
+  color: var(--color-primary);
+  background-color: #F0F9FA;
+}
+
+.mmt-tab-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 2px;
+  color: inherit;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.mmt-tab-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.mmt-tab-label {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.mmt-tab-item.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.mmt-tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 14px;
+  right: 14px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 3px 3px 0 0;
+}
+
+.mmt-tab-item:hover .mmt-tab-icon-wrap {
+  transform: translateY(-2px);
+}
+
+.mmt-tab-badge-pill {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  background: linear-gradient(135deg, #FF5E57, #E040FB);
+  color: var(--color-white);
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 5px rgba(224, 64, 251, 0.35);
 }
 
 .hero-headline {
@@ -556,6 +666,82 @@
   font-size: 0.95rem;
   min-width: 20px;
   text-align: center;
+}
+
+/* Pet Friendly Toggle Component */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 6px;
+  gap: var(--space-md);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: 4px;
+}
+
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.switch-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-border-medium);
+  transition: all var(--transition-fast);
+  border-radius: 24px;
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--color-white);
+  transition: all var(--transition-fast);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.switch-toggle input:checked + .switch-slider {
+  background-color: var(--color-primary);
+}
+
+.switch-toggle input:focus-visible + .switch-slider {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.switch-toggle input:checked + .switch-slider:before {
+  transform: translateX(20px);
+}
+
+.pet-summary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-tropical-green);
+  background-color: #EAF6F0;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
 }
 
 /* ==========================================================================
@@ -1085,8 +1271,9 @@
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 800;
   color: var(--color-white);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: 0.01em;
+  word-spacing: 0.18em;
+  line-height: 1.2;
   margin-bottom: var(--space-sm);
 }
 

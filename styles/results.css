@@ -111,7 +111,7 @@
    ========================================================================== */
 
 .results-main-section {
-  padding: var(--space-xl) 0 var(--space-4xl);
+  padding: var(--space-md) 0 var(--space-2xl);
   flex: 1;
 }
 

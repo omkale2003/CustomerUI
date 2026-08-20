@@ -12,7 +12,8 @@ class KonkanApp {
       checkOut: '',
       adults: 2,
       children: 0,
-      rooms: 1
+      rooms: 1,
+      pets: false
     };
 
     this.activeStayModal = null;
@@ -46,6 +47,7 @@ class KonkanApp {
     this.dom.guestsToggle = document.getElementById('guestsToggle');
     this.dom.guestsPopover = document.getElementById('guestsPopover');
     this.dom.guestsSummaryText = document.getElementById('guestsSummaryText');
+    this.dom.petFriendlyToggle = document.getElementById('petFriendlyToggle');
     this.dom.searchStaysBtn = document.getElementById('searchStaysBtn');
     
     // Counters
@@ -115,6 +117,13 @@ class KonkanApp {
       });
     });
 
+    // Pet Friendly Toggle
+    this.dom.petFriendlyToggle?.addEventListener('change', (e) => {
+      this.currentFilters.pets = e.target.checked;
+      this.updateGuestDisplay();
+      this.loadFeaturedStays();
+    });
+
     // Close popovers on outside click
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.search-field-item') && !e.target.closest('.popover-card')) {
@@ -162,6 +171,33 @@ class KonkanApp {
       tab.addEventListener('click', () => {
         const cat = tab.getAttribute('data-category');
         this.setCategoryFilter(cat);
+      });
+    });
+
+    // MakeMyTrip-Style Hero Navigation Tabs
+    document.querySelectorAll('.mmt-tab-item').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.mmt-tab-item').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const target = tab.getAttribute('data-tab-target');
+        if (target === 'stays') {
+          const searchBox = document.querySelector('.search-box-card');
+          searchBox?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (target === 'experiences') {
+          const expSec = document.getElementById('experiencesSection');
+          expSec?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (target === 'destinations') {
+          const destSec = document.getElementById('destinationsSection');
+          destSec?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (target === 'offers') {
+          const offerSec = document.getElementById('seasonalSection');
+          offerSec?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
 
@@ -311,7 +347,10 @@ class KonkanApp {
 
   updateGuestDisplay() {
     const totalGuests = this.currentFilters.adults + this.currentFilters.children;
-    const text = `${totalGuests} Guest${totalGuests > 1 ? 's' : ''}, ${this.currentFilters.rooms} Room${this.currentFilters.rooms > 1 ? 's' : ''}`;
+    let text = `${totalGuests} Guest${totalGuests > 1 ? 's' : ''}, ${this.currentFilters.rooms} Room${this.currentFilters.rooms > 1 ? 's' : ''}`;
+    if (this.currentFilters.pets) {
+      text += ' · 🐾 Pets';
+    }
     if (this.dom.guestsSummaryText) {
       this.dom.guestsSummaryText.textContent = text;
     }
@@ -379,12 +418,28 @@ class KonkanApp {
 
   async executeSearch() {
     this.closeAllPopovers();
+    const dest = this.currentFilters.destinationQuery;
+    const checkIn = this.currentFilters.checkIn || '2026-08-23';
+    const checkOut = this.currentFilters.checkOut || '2026-08-25';
+    const adults = this.currentFilters.adults || 2;
+    const children = this.currentFilters.children || 0;
+    const rooms = this.currentFilters.rooms || 1;
+    const pets = this.currentFilters.pets;
+
+    if (dest) {
+      this.showToast(`Finding stays in ${dest}...`);
+      setTimeout(() => {
+        window.location.href = `results.html?dest=${encodeURIComponent(dest)}&checkIn=${encodeURIComponent(checkIn)}&checkOut=${encodeURIComponent(checkOut)}&adults=${adults}&children=${children}&rooms=${rooms}${pets ? '&pets=true' : ''}`;
+      }, 250);
+      return;
+    }
+
     const targetSection = document.getElementById('featuredStaysSection');
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     await this.loadFeaturedStays();
-    this.showToast(`Showing stays for "${this.currentFilters.destinationQuery || 'All Konkan'}"`);
+    this.showToast('Showing all featured coastal stays');
   }
 
   // Load all sections asynchronously
@@ -421,7 +476,8 @@ class KonkanApp {
       const stays = await apiService.fetchStays({
         category: this.currentFilters.category,
         destinationQuery: this.currentFilters.destinationQuery,
-        guests: this.currentFilters.adults + this.currentFilters.children
+        guests: this.currentFilters.adults + this.currentFilters.children,
+        pets: this.currentFilters.pets
       });
 
       if (stays.length === 0) {

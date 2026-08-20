@@ -125,8 +125,8 @@ ul, ol {
 }
 
 .section-wrapper {
-  padding-top: var(--space-4xl);
-  padding-bottom: var(--space-4xl);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
 }
 
 .section-sand {
@@ -140,7 +140,7 @@ ul, ol {
 }
 
 .section-header {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

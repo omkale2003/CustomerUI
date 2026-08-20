@@ -41,14 +41,6 @@
         <span>Konkan<span class="logo-text-accent">Trip</span></span>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="#featuredStaysSection" class="nav-link active">Stays</a>
-        <a href="#experiencesSection" class="nav-link">Experiences</a>
-        <a href="search.html" class="nav-link" title="Open Screen 02 — Destination & Stay Search">Destinations</a>
-        <a href="#seasonalSection" class="nav-link">Offers</a>
-      </nav>
-
       <!-- Header Action Items -->
       <div class="header-actions">
         <!-- Currency / Region indicator -->
@@ -99,10 +91,53 @@
       <div class="container hero-content">
         <div class="hero-badge-pill">
           <svg class="icon-inline hero-badge-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          Authentic Maharashtra & Goa Coast
+          Authentic Maharashtra Coast
         </div>
 
-        <h1 class="hero-headline">ESCAPE TO THE KONKAN</h1>
+        <!-- MakeMyTrip-Style Service Navigation Tabs -->
+        <nav class="mmt-hero-tabs" role="tablist" aria-label="Konkan Travel Categories">
+          <button class="mmt-tab-item active" role="tab" aria-selected="true" data-tab-target="stays" id="mmtTabStays" title="Find Stays & Homestays">
+            <div class="mmt-tab-icon-wrap">
+              <svg class="mmt-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <span class="mmt-tab-label">Stays</span>
+          </button>
+
+          <button class="mmt-tab-item" role="tab" aria-selected="false" data-tab-target="experiences" id="mmtTabExperiences" title="Discover Local Experiences">
+            <div class="mmt-tab-icon-wrap">
+              <svg class="mmt-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </div>
+            <span class="mmt-tab-label">Experiences</span>
+          </button>
+
+          <button class="mmt-tab-item" role="tab" aria-selected="false" data-tab-target="destinations" id="mmtTabDestinations" title="Explore Coastal Destinations">
+            <div class="mmt-tab-icon-wrap">
+              <svg class="mmt-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <span class="mmt-tab-label">Destinations</span>
+          </button>
+
+          <button class="mmt-tab-item" role="tab" aria-selected="false" data-tab-target="offers" id="mmtTabOffers" title="View Monsoon & Seasonal Offers">
+            <div class="mmt-tab-badge-pill">Hot</div>
+            <div class="mmt-tab-icon-wrap">
+              <svg class="mmt-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <span class="mmt-tab-label">Offers</span>
+          </button>
+        </nav>
+
+        <h1 class="hero-headline">ESCAPE TO KONKAN</h1>
         <p class="hero-supporting-text">Stays, beaches & experiences worth discovering.</p>
 
         <!-- Main Search Widget Container -->
@@ -229,13 +264,25 @@
                 <div class="counter-row">
                   <div>
                     <div class="counter-info-title">Rooms</div>
-                    <div class="counter-info-sub">Number of stays</div>
+                    <div class="counter-info-sub">Number of rooms</div>
                   </div>
                   <div class="counter-controls">
                     <button class="counter-btn" data-counter-action="dec" data-counter-target="rooms" aria-label="Decrease Rooms">-</button>
                     <span class="counter-value" id="roomsCount">1</span>
                     <button class="counter-btn" data-counter-action="inc" data-counter-target="rooms" aria-label="Increase Rooms">+</button>
                   </div>
+                </div>
+
+                <!-- Pet Friendly Toggle -->
+                <div class="toggle-row">
+                  <div>
+                    <div class="counter-info-title">🐾 Pet Friendly</div>
+                    <div class="counter-info-sub">Traveling with pets</div>
+                  </div>
+                  <label class="switch-toggle" for="petFriendlyToggle">
+                    <input type="checkbox" id="petFriendlyToggle" aria-label="Toggle Pet Friendly Stays" />
+                    <span class="switch-slider"></span>
+                  </label>
                 </div>
               </div>
             </div>
@@ -352,7 +399,7 @@
               Local Activities
             </div>
             <h2 class="section-title" id="expHeading">Experience Konkan</h2>
-            <p class="section-subtitle">Immerse in coastal traditions, underwater adventures, and historic sea fort trails.</p>
+            <p class="section-subtitle">Immerse yourself in coastal traditions, underwater adventures, and historic sea fort trails.</p>
           </div>
         </div>
 
@@ -375,7 +422,7 @@
               <svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle></svg>
               Seasonal Special
             </div>
-            <h2 class="seasonal-title">MONSOON KONKAN ESCAPE</h2>
+            <h2 class="seasonal-title">Monsoon Konkan Escape</h2>
             <p class="seasonal-desc">
               Discover selected stays this monsoon. Experience lush emerald cliffs, misty coconut plantations, fresh Malvani seafood banquets, and serene coastal tranquility.
             </p>
@@ -416,7 +463,7 @@
               Our Promise
             </div>
             <h2 class="section-title" id="whyHeading">Why KonkanTrip</h2>
-            <p class="section-subtitle">Dedicated exclusively to authentic coastal travel along the Maharashtra coastline.</p>
+            <p class="section-subtitle">Dedicated exclusively to authentic coastal travel along Maharashtra's coastline.</p>
           </div>
         </div>
 
@@ -547,7 +594,6 @@
         <div style="display: flex; gap: 18px; flex-wrap: wrap;">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cancellation Policy</a>
           <a href="#" class="footer-link">Sitemap</a>
         </div>
       </div>
@@ -600,7 +646,7 @@
     <div class="mobile-nav-list">
       <a href="search.html" class="mobile-nav-link" onclick="window.konkanApp.closeAllModals()">
         <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <span>Search Screen 02</span>
+        <span>Search Destinations</span>
       </a>
       <a href="#featuredStaysSection" class="mobile-nav-link active" onclick="window.konkanApp.closeAllModals()">
         <svg class="icon-inline" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
